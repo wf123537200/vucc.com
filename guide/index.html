@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>tbd-design</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="icon" href="../images/logo.png" type="image/x-icon">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="../js/vue.js"></script>
+        <style>
+            .one-and-half-width {
+                width: 150%;
+            }
+
+            .ml-100 {
+                margin-left: -100px!important;
+            }
+
+            .content a {
+                font-weight: inherit!important;
+            }
+
+            h3.tbd-dialog-title:before, .tbd-progress-title h3:before, .tbd-step h3:before, .tbd-transfer h3:before {
+                content: ''!important;
+            }
+            .tbd-alert h3, .tbd-collapse-group h3, .tbd-collapse h3, .tbd-progress-title h3, .tbd-step h3, .tbd-transfer h3 {
+                margin: 0!important;
+            }
+
+            .tbd-alert h3:before, .tbd-collapse-group h3:before, .tbd-collapse h3:before {
+                content: ''!important;
+            }
+
+            .tbd-dropdown-menu {
+                margin: 0!important;
+                padding: 5px 5px 0!important;
+            }
+
+            .tbd-select-selection-rendered {
+                margin: 0!important;
+                line-height: inherit!important;
+            }
+
+            .tbd-step {
+                margin: 0 0 0 -100px!important;
+                line-height: inherit!important;
+            }
+            .tbd-step p, .tbd-timeline p {
+                line-height: inherit!important;
+                margin: inherit!important;
+            }
+
+            .tbd-tree ul {
+                margin: 0!important;
+                line-height: inherit!important;
+            }
+        </style>
+        
+            <link rel="stylesheet" href="../css/page.css">
+        
+        
+    </head>
+    <body id="app" style="background: #ffffff;">
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <a id="logo" href="/">
+        <img src="../images/logo.png">
+        <span>tbd-desing(vue)</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link current">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../components/index.html" class="nav-link">组件</a></li>
+<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link current">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../components/index.html" class="nav-link">组件</a></li>
+<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
+
+    </ul>
+    <div class="list">
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="../guide/index.html" class="sidebar-link current"></a>
+                </li>
+            
+                <li>
+                    <a href="../scaffold/index.html" class="sidebar-link current"></a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content guide with-sidebar" style="list-style: initial;">
+    
+    <h1></h1>
+    <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>tbd-design: tencent big data design, 是专门为了数据平台部使用vue作为前端开发框架提供的一套ui库</p>
+<p>ui库主要包括重构和交互两个部分。</p>
+<p>ui库的重构部分可以参看<a href="http://t.gri.oa.com/ui/tbd_design/ui/html/docs/doc.html?markdown=btn" target="_blank" rel="external">公用UI控件-发布平台规范</a></p>
+<h2 id="安装和使用方法"><a href="#安装和使用方法" class="headerlink" title="安装和使用方法"></a>安装和使用方法</h2><p>提供两种方法</p>
+<h3 id="标签引入"><a href="#标签引入" class="headerlink" title="标签引入"></a>标签引入</h3> <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- import global css--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/assets/css/tbd-index.css"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- js --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/res/app.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="npm引入"><a href="#npm引入" class="headerlink" title="npm引入"></a>npm引入</h3><p> <code><br>    tnpm install @tencent/tbd-design-vue<br> </code></p>
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 整体引入</span></div><div class="line"><span class="keyword">var</span> tbdDesign = <span class="built_in">require</span>(<span class="string">'@tencent/tbd-design-vue'</span>);</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: <span class="string">'#app'</span>,</div><div class="line">    components: tbdDesign</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 部分引入</span></div><div class="line"><span class="keyword">var</span> vButton = <span class="built_in">require</span>(<span class="string">'@tencent/tbd-design-vue'</span>).vButton;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> tbdDesign = <span class="built_in">require</span>(<span class="string">'@tencent/tbd-design-vue/scr/components/button'</span>);</div></pre></td></tr></table></figure>
+<h2 id="目录说明"><a href="#目录说明" class="headerlink" title="目录说明"></a>目录说明</h2><p>|–doc-server 官网帮助文档代码<br>|–docs 项目相关设计和说明文档<br>|–resource 重构代码构建后的文件<br>|–ui 样式重构相关less等文件<br>|–vue vue组件库相关代码</p>
+<h2 id="组件开发规范"><a href="#组件开发规范" class="headerlink" title="组件开发规范"></a>组件开发规范</h2><h3 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h3><p>组件代码全面支持 <code>es6</code> 的编码规范,编码时统一采用es6的统一写法进行代码编写<br>每个组件为一个模块</p>
+<h3 id="新建组件"><a href="#新建组件" class="headerlink" title="新建组件"></a>新建组件</h3><p>新增组件步骤:</p>
+<ul>
+<li><strong>· 以组件名新增文件夹 </strong></li>
+<li><strong>· 文件夹下新增index.vue </strong></li>
+<li><p><strong>· public.js 中引入相关的组件,以 <code>v + 组件名</code> 的驼峰写法对外暴露的组件名 </strong></p>
+<p>  例: button组件 暴露为 vButton</p>
+</li>
+<li><strong>· 外部在引入组件即可使用 </strong></li>
+</ul>
+<p class="tip">原则上每个组件文件夹只对外暴露一个同名组件</p>
+
+<h3 id="组件模块顺序"><a href="#组件模块顺序" class="headerlink" title="组件模块顺序"></a>组件模块顺序</h3><p>组件采用vue单一文件组件的方式进行编写,文件内部结构顺序为:</p>
+<ul>
+<li><strong>· 注释说明 </strong></li>
+<li><strong>· template </strong></li>
+<li><strong>· script </strong></li>
+<li><strong>· style </strong></li>
+</ul>
+<h3 id="注释说明"><a href="#注释说明" class="headerlink" title="注释说明"></a>注释说明</h3><p>注释说明应遵循jsdoc相关规范,主要说明内容示例如下:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!--</span></div><div class="line">   组件名称 + 描述</div><div class="line"></div><div class="line">   @requires 依赖模块说明(如有)</div><div class="line">   @param &#123;参数类型&#125; 参数名 参数说明</div><div class="line">--&gt;</div></pre></td></tr></table></figure></p>
+<p>所有参数都应体现在组件头部方便大家查找使用</p>
+<h3 id="template"><a href="#template" class="headerlink" title="template"></a>template</h3><p>template为组件模板,主要需要注意以下两点:</p>
+<ul>
+<li><p><strong>· 使用简写 </strong><br>  按照vue约定统一使用简写,具体可参考<a href="http://vuejs.org.cn/guide/syntax.html#u7F29_u5199" target="_blank" rel="external">vue缩写</a></p>
+<p>  例:</p>
+<pre><code>v-bind:click 简写为 @click |
+v-bind:class 简写为 :class
+</code></pre></li>
+</ul>
+<ul>
+<li><p><strong>· 唯一包装元素 </strong><br>  不推荐:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">:style</span>=<span class="string">"appendStyle"</span> <span class="attr">:class</span>=<span class="string">"['tbd-btn', typeClass]"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>  推荐:</p>
+  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">:style</span>=<span class="string">"appendStyle"</span> <span class="attr">:class</span>=<span class="string">"['tbd-btn', typeClass]"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这么做是为了在使用this.$el时,返回组件实体,而不是#text节点,具体可参考<a href="http://vuejs.org.cn/guide/components.html#片断实例" target="_blank" rel="external">片段实例</a></p>
+<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><ul>
+<li><strong>· props </strong><br>外部传入组件的参数,如有默认值,可以写入默认值,必填项必须做出必须做出类型限制,并在文档中给出相应的说明<br>例子:<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">props: <span class="built_in">Object</span>.assign(&#123;&#125;, componentBaseParamConfig, &#123;</div><div class="line">      type: &#123;</div><div class="line">        type: <span class="built_in">String</span>,</div><div class="line">        <span class="keyword">default</span>: <span class="string">'default'</span></div><div class="line">      &#125;,</div><div class="line">      size: &#123;</div><div class="line">        type: <span class="built_in">String</span>,</div><div class="line">        <span class="keyword">default</span>: <span class="string">'normal'</span></div><div class="line">      &#125;,</div><div class="line">      isDisabled: &#123;</div><div class="line">        type: <span class="built_in">Boolean</span>,</div><div class="line">        <span class="keyword">default</span>: <span class="literal">false</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="组件代码构建"><a href="#组件代码构建" class="headerlink" title="组件代码构建"></a>组件代码构建</h2><p>代码主要采用webpack为构建方案,cmd为模块化方案,页面能够进行自动热替换</p>
+<p class="tip">以下操作之前你得先进入项目vue目录下</p>
+
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>首先,你得有nodejs + npm</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<h3 id="开发环境启动"><a href="#开发环境启动" class="headerlink" title="开发环境启动"></a>开发环境启动</h3><p>启动开发环境,只需要<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">$ npm run dev</div></pre></td></tr></table></figure></p>
+<p>将会在 <code>/res</code> 下生成demo.js文件</p>
+<h3 id="开发环境打包"><a href="#开发环境打包" class="headerlink" title="开发环境打包"></a>开发环境打包</h3><p>生成文件为未压缩的调试代码,需执行<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">$ npm run dev-build</div></pre></td></tr></table></figure></p>
+<p>将会在 <code>/res</code> 下生成demo.js文件</p>
+<h3 id="部署包"><a href="#部署包" class="headerlink" title="部署包"></a>部署包</h3><p>生成文件为压缩过的代码,需执行<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">$ npm run res</div></pre></td></tr></table></figure></p>
+<p>将会在 <code>/res</code> app.js文件</p>
+<h2 id="组件示例"><a href="#组件示例" class="headerlink" title="组件示例"></a>组件示例</h2><p>  <a href="/api/">请点击右上角组件示例</a></p>
+
+
+    
+
+    
+</div>
+
+                
+            </div>
+            <script src="../js/docsearch.js"></script>
+            <script src="../js/smooth-scroll.min.js"></script>
+            <script src="../js/common.js"></script>
+            <script src="../js/app.js"></script>
+            <script src="../js/fastclick.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    FastClick.attach(document.body);
+                }, false);
+            </script>
+
+            <!-- add by zakwu -->
+            <script src="../js/vue-demo.js"></script>
+
+        
+        <script>
+            if(location.host.indexOf('github') >= 0) {
+                document.querySelector('#rebuildLink').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

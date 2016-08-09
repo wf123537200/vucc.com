@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>进度条 - tbd-design</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script>
+            window.PAGE_TYPE = "components"
+        </script>
+        <link rel="icon" href="../images/logo.png" type="image/x-icon">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="../js/vue.js"></script>
+        <style>
+            .one-and-half-width {
+                width: 150%;
+            }
+
+            .ml-100 {
+                margin-left: -100px!important;
+            }
+
+            .content a {
+                font-weight: inherit!important;
+            }
+
+            h3.tbd-dialog-title:before, .tbd-progress-title h3:before, .tbd-step h3:before, .tbd-transfer h3:before {
+                content: ''!important;
+            }
+            .tbd-alert h3, .tbd-collapse-group h3, .tbd-collapse h3, .tbd-progress-title h3, .tbd-step h3, .tbd-transfer h3 {
+                margin: 0!important;
+            }
+
+            .tbd-alert h3:before, .tbd-collapse-group h3:before, .tbd-collapse h3:before {
+                content: ''!important;
+            }
+
+            .tbd-dropdown-menu {
+                margin: 0!important;
+                padding: 5px 5px 0!important;
+            }
+
+            .tbd-select-selection-rendered {
+                margin: 0!important;
+                line-height: inherit!important;
+            }
+
+            .tbd-step {
+                margin: 0 0 0 -100px!important;
+                line-height: inherit!important;
+            }
+            .tbd-step p, .tbd-timeline p {
+                line-height: inherit!important;
+                margin: inherit!important;
+            }
+
+            .tbd-tree ul {
+                margin: 0!important;
+                line-height: inherit!important;
+            }
+        </style>
+        
+            <link rel="stylesheet" href="../css/page.css">
+        
+        
+    </head>
+    <body id="app" style="background: #ffffff;">
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <a id="logo" href="/">
+        <img src="../images/logo.png">
+        <span>tbd-desing(vue)</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../components/index.html" class="nav-link current">组件</a></li>
+<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../components/index.html" class="nav-link current">组件</a></li>
+<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
+
+    </ul>
+    <div class="list">
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="../components/index.html" class="sidebar-link">全局参数说明</a>
+                </li>
+            
+                <li>
+                    <a href="../components/button.html" class="sidebar-link">按钮</a>
+                </li>
+            
+                <li>
+                    <a href="../components/button-group.html" class="sidebar-link">按钮组</a>
+                </li>
+            
+                <li>
+                    <a href="../components/switch.html" class="sidebar-link">开关</a>
+                </li>
+            
+                <li>
+                    <a href="../components/checkbox.html" class="sidebar-link">复选框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/radio.html" class="sidebar-link">单选框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/select.html" class="sidebar-link">选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                </li>
+            
+                <li>
+                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表(待建设)</a>
+                </li>
+            
+                <li>
+                    <a href="../components/tips.html" class="sidebar-link">tips弹窗</a>
+                </li>
+            
+                <li>
+                    <a href="../components/messagebox.html" class="sidebar-link">messageBox类弹窗</a>
+                </li>
+            
+                <li>
+                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dialog.html" class="sidebar-link">dialog类模态弹窗</a>
+                </li>
+            
+                <li>
+                    <a href="../components/tabs.html" class="sidebar-link">标签页</a>
+                </li>
+            
+                <li>
+                    <a href="../components/slider.html" class="sidebar-link">滑动条</a>
+                </li>
+            
+                <li>
+                    <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/edit-table.html" class="sidebar-link">可插入的表格组件</a>
+                </li>
+            
+                <li>
+                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域</a>
+                </li>
+            
+                <li>
+                    <a href="../components/step-input.html" class="sidebar-link">步进输入框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/badge.html" class="sidebar-link">徽标数</a>
+                </li>
+            
+                <li>
+                    <a href="../components/collapse.html" class="sidebar-link">折叠面板</a>
+                </li>
+            
+                <li>
+                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组</a>
+                </li>
+            
+                <li>
+                    <a href="../components/progress.html" class="sidebar-link current">进度条</a>
+                </li>
+            
+                <li>
+                    <a href="../components/loading.html" class="sidebar-link">加载</a>
+                </li>
+            
+                <li>
+                    <a href="../components/steps.html" class="sidebar-link">步骤条</a>
+                </li>
+            
+                <li>
+                    <a href="../components/tag-list.html" class="sidebar-link">标签列表</a>
+                </li>
+            
+                <li>
+                    <a href="../components/time-line.html" class="sidebar-link">时间轴</a>
+                </li>
+            
+                <li>
+                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示</a>
+                </li>
+            
+                <li>
+                    <a href="../components/transfer.html" class="sidebar-link">穿梭框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/tree.html" class="sidebar-link">树状组件</a>
+                </li>
+            
+                <li>
+                    <a href="../components/from.html" class="sidebar-link">表单</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content components with-sidebar" style="list-style: initial;">
+    
+    <h1>进度条</h1>
+    <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>progress</code> 组件进度百分比,取值在[0, 100]</p>
+<ul>
+<li><strong>· 类型：</strong> <code>Number</code></li>
+</ul>
+<p><code>type</code> 组件的的类型</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>String</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>normal</code></p>
+</li>
+<li><p><strong>· 可选值：</strong> <code>normal | success | error | warn</code></p>
+</li>
+</ul>
+<p><code>size</code> 组件的的类型</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>String</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>normal</code></p>
+</li>
+<li><p><strong>· 可选值：</strong> <code>normal | large</code></p>
+</li>
+</ul>
+<p><code>title</code> 是否有title,决定是否显示title栏</p>
+<ul>
+<li><strong>· 类型：</strong> <code>String</code></li>
+</ul>
+<p><code>info</code> 是否有title,决定是否显示title栏</p>
+<ul>
+<li><strong>· 类型：</strong> <code>String</code></li>
+</ul>
+<p><code>explain</code> 说明文字,决定是否显示explain部分</p>
+<ul>
+<li><strong>· 类型：</strong> <code>String</code></li>
+</ul>
+<p><code>isShowText</code> 是否显示progress</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<p><code>isActive</code> 是否展示动态类型的progress</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:progress</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:size</span>=<span class="string">"'large'"</span> <span class="attr">:progress</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:progress</span>=<span class="string">"40"</span> <span class="attr">:title</span>=<span class="string">"'标题'"</span> <span class="attr">:info</span>=<span class="string">"'啦啦'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:progress</span>=<span class="string">"40"</span> <span class="attr">:is-show-text</span>=<span class="string">"true"</span> <span class="attr">:is-active</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:type</span>=<span class="string">"'success'"</span> <span class="attr">:progress</span>=<span class="string">"50"</span> <span class="attr">:explain</span>=<span class="string">"'成功'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:type</span>=<span class="string">"'error'"</span> <span class="attr">:progress</span>=<span class="string">"50"</span> <span class="attr">:explain</span>=<span class="string">"'失败'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-progress</span> <span class="attr">:type</span>=<span class="string">"'warn'"</span> <span class="attr">:progress</span>=<span class="string">"50"</span> <span class="attr">:explain</span>=<span class="string">"'警告'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-progress</span>&gt;</span></div></pre></td></tr></table></figure>
+<div><br><v-progress :progress="20"></v-progress><br>        <v-progress :size="'large'" :progress="30"></v-progress><br>        <v-progress :progress="40" :title="'标题'" :info="'啦啦'"></v-progress><br>        <v-progress :progress="40" :is-show-text="true" :is-active="true"></v-progress><br>        <v-progress :type="'success'" :progress="50" :explain="'成功'"></v-progress><br>        <v-progress :type="'error'" :progress="50" :explain="'失败'"></v-progress><br>        <v-progress :type="'warn'" :progress="50" :explain="'警告'"></v-progress><br></div>
+
+    
+
+    
+      <div class="guide-links">
+        
+          <span>← <a href="../components/collapse-group.html">折叠面板组</a></span>
+        
+        
+          <span style="float:right"><a href="../components/loading.html">加载</a> →</span>
+        
+      </div>
+    
+</div>
+
+                
+            </div>
+            <script src="../js/docsearch.js"></script>
+            <script src="../js/smooth-scroll.min.js"></script>
+            <script src="../js/common.js"></script>
+            <script src="../js/app.js"></script>
+            <script src="../js/fastclick.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    FastClick.attach(document.body);
+                }, false);
+            </script>
+
+            <!-- add by zakwu -->
+            <script src="../js/vue-demo.js"></script>
+
+        
+        <script>
+            if(location.host.indexOf('github') >= 0) {
+                document.querySelector('#rebuildLink').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

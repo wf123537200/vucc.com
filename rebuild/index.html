@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>tbd-design 重构稿 - tbd-design</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script>
+            window.PAGE_TYPE = "rebuild"
+        </script>
+        <link rel="icon" href="../images/logo.png" type="image/x-icon">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="../js/vue.js"></script>
+        <style>
+            .one-and-half-width {
+                width: 150%;
+            }
+
+            .ml-100 {
+                margin-left: -100px!important;
+            }
+
+            .content a {
+                font-weight: inherit!important;
+            }
+
+            h3.tbd-dialog-title:before, .tbd-progress-title h3:before, .tbd-step h3:before, .tbd-transfer h3:before {
+                content: ''!important;
+            }
+            .tbd-alert h3, .tbd-collapse-group h3, .tbd-collapse h3, .tbd-progress-title h3, .tbd-step h3, .tbd-transfer h3 {
+                margin: 0!important;
+            }
+
+            .tbd-alert h3:before, .tbd-collapse-group h3:before, .tbd-collapse h3:before {
+                content: ''!important;
+            }
+
+            .tbd-dropdown-menu {
+                margin: 0!important;
+                padding: 5px 5px 0!important;
+            }
+
+            .tbd-select-selection-rendered {
+                margin: 0!important;
+                line-height: inherit!important;
+            }
+
+            .tbd-step {
+                margin: 0 0 0 -100px!important;
+                line-height: inherit!important;
+            }
+            .tbd-step p, .tbd-timeline p {
+                line-height: inherit!important;
+                margin: inherit!important;
+            }
+
+            .tbd-tree ul {
+                margin: 0!important;
+                line-height: inherit!important;
+            }
+        </style>
+        
+            <link rel="stylesheet" href="../css/page.css">
+        
+        
+            <style>
+                .doc-example br {
+                    display: none;
+                }
+
+                .doc-example h3 {
+                    margin: 0;
+                }
+
+                .doc-example h3:before {
+                    content: ''!important;
+                }
+
+                .tbd-dialog-wrap br {
+                    display: none;
+                }
+
+                .tbd-dropdown ul {
+                    padding: 0;
+                    margin: 0;
+                }
+                .tbd-dropdown ul a {
+                    color: inherit;
+                    font-weight: normal;
+                }
+
+                .doc-icons {
+                    margin: 0 -10px;
+                    overflow: hidden;
+                    *zoom: 1;
+                }
+
+                .doc-icons li {
+                    float: left;
+                    margin: 0 10px 10px;
+                    width: 150px;
+                    text-align: center;
+                    color: #767676;
+                    border-radius: 5px;
+                    -webkit-transition: all 0.3s linear;
+                    transition: all 0.3s linear;
+                }
+                .doc-icons li:hover {
+                    background: #41abe1;
+                    color: #fff;
+                }
+                .doc-icons li > span {
+                    display: table-cell;
+                    width: 150px;
+                    height: 100px;
+                    vertical-align: middle;
+                }
+
+                .doc-icons .tbdi {
+                    margin-bottom: 10px;
+                    font-size: 24px;
+                }
+
+                .doc-icons h3 {
+                    margin: 0;
+                }
+                .doc-icons h3:before {
+                    content: ''!important;
+                }
+                .doc-col-demo {
+                    padding: 10px;
+                    border: 1px solid #999;
+                }
+
+                .tbd-step {
+                    min-width: 1000px;
+                }
+                .tbd-step.tbd-step-vertical li.tbd-step-item {
+                    padding-bottom: 0;
+                }
+                .tbd-step.tbd-step-vertical li.tbd-step-item h3 {
+                    margin: 0;
+                }
+                .tbd-step.tbd-step-vertical li.tbd-step-item p {
+                    margin: 0;
+                    padding: 10px;
+                }
+                .tbd-timeline p {
+                    margin: 0!important;
+                }
+                .tbd-timeline {
+                    padding-left: 10px!important;
+                    margin: 0!important;
+                }
+            </style>
+            <script src="../js/jquery.min.js"></script>
+            <script src="../js/dealMarkdownCode.js"></script>
+        
+    </head>
+    <body id="app" style="background: #ffffff;">
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <a id="logo" href="/">
+        <img src="../images/logo.png">
+        <span>tbd-desing(vue)</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../components/index.html" class="nav-link">组件</a></li>
+<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link current">重构稿</a></li>
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../components/index.html" class="nav-link">组件</a></li>
+<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link current">重构稿</a></li>
+
+    </ul>
+    <div class="list">
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="../rebuild/index.html" class="sidebar-link current">tbd-design 重构稿</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/alert.html" class="sidebar-link">警告提示</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/badge.html" class="sidebar-link">徽标数</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/btn.html" class="sidebar-link">按钮</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/btn_group.html" class="sidebar-link">按钮组</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/checkbox_radio.html" class="sidebar-link">多选框、单选框</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/collapse.html" class="sidebar-link">折叠面板</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/datepicker.html" class="sidebar-link">日期选择器</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/dialog.html" class="sidebar-link">弹窗</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/dropdown.html" class="sidebar-link">下拉菜单</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/form.html" class="sidebar-link">表单排列</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/icons.html" class="sidebar-link">TBD 字体图标</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/input.html" class="sidebar-link">文本框、文本域</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/input_group.html" class="sidebar-link">文本框组合</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/input_number.html" class="sidebar-link">数字输入框</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/layout.html" class="sidebar-link">栅格化布局</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/notification.html" class="sidebar-link">通知提醒框</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/pagination.html" class="sidebar-link">分页</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/popover.html" class="sidebar-link">轻浮层提示</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/progress.html" class="sidebar-link">进度条</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/select.html" class="sidebar-link">select选择器</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/slider.html" class="sidebar-link">滑动输入条</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/spin.html" class="sidebar-link">加载提示</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/steps.html" class="sidebar-link">步骤条</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/switch.html" class="sidebar-link">开关按钮</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/tabs.html" class="sidebar-link">标签页</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/tags.html" class="sidebar-link">标签列表</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/timeline.html" class="sidebar-link">时间轴</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/tooltip.html" class="sidebar-link">文字提示</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/transfer.html" class="sidebar-link">穿梭框</a>
+                </li>
+            
+                <li>
+                    <a href="../rebuild/tree.html" class="sidebar-link">树形列表</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content rebuild with-sidebar" style="list-style: initial;">
+    
+    <h1>tbd-design 重构稿</h1>
+    <p>  TBD Design 是数据平台部产品中心的UI规范，旨在快速开发站点，目前本规范还在不断完善中。本规范包含两大模块：基础UI规范、业务场景组件。<br>  <br><br>  TBD Design的浏览器兼容情况如下：<br><br>  chrome 49.0.2623：全兼容<br><br>  firefox 41.0.1：全兼容<br><br>  ie10~11：全兼容<br><br>  ie9：css3动画无效，其他都兼容<br><br>  ie8：css3属性均无效，其中以圆角效果为主的组件效果比较差。<br><br>  建议在以ie9以上浏览器为主的情况下，采用本规范。</p>
+
+
+    
+      <div class="guide-links">
+        
+        
+          <span style="float:right"><a href="../rebuild/alert.html">警告提示</a> →</span>
+        
+      </div>
+    
+
+    
+</div>
+
+                
+            </div>
+            <script src="../js/docsearch.js"></script>
+            <script src="../js/smooth-scroll.min.js"></script>
+            <script src="../js/common.js"></script>
+            <script src="../js/app.js"></script>
+            <script src="../js/fastclick.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    FastClick.attach(document.body);
+                }, false);
+            </script>
+
+            <!-- add by zakwu -->
+            <script src="../js/vue-demo.js"></script>
+
+        
+        <script>
+            if(location.host.indexOf('github') >= 0) {
+                document.querySelector('#rebuildLink').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>
