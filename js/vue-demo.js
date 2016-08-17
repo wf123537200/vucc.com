@@ -3,6 +3,33 @@ new Vue({
     components: window.__tbd_design__,
     data() {
         return {
+            // multi-select
+            multiDataList: {
+                optsList: (function() {
+                    var base =[{
+                        value: 1,
+                        label: 'value1value1value1value1value1',
+                        renderLi: function() {
+                            return `<a>111value1value1value1value1value1</a>`
+                        }
+                    }, {
+                        value: 2,
+                        label: 'value2disabledvalue2disabled',
+                        isDisabled: true
+                    }];
+
+                    var other = [];
+                    for(var i = 0; i < 30; i++) {
+                        other.push({
+                            value: i,
+                            label: 'value' + i
+                        })
+                    }
+
+                    return base.concat(other);
+                })()
+            },
+            multiResList: [ { "value": 7, "label": "value7" }, { "value": 9, "label": "value9" }, { "value": 17, "label": "value17" }, { "value": 11, "label": "value11" }],
             // tabs
             activeIndex: 2,
             // button group
@@ -200,7 +227,38 @@ new Vue({
             transferRes: [{
                 content: '我是选择框Ccc',
                 isChecked: true
-            }]
+            }],
+
+            // 搜索框
+            search: '',
+
+            // 固定点阵的滑动输入条
+            sliderValueList: [{
+                label: '0ms',
+                value: 0
+            }, {
+                label: '25ms',
+                value: 25
+            }, {
+                label: '50ms',
+                value: 50
+            }, {
+                label: '100ms',
+                value: 100
+            }, {
+                label: '200ms',
+                value: 200
+            }, {
+                label: '400ms',
+                value: 400
+            }, {
+                label: '1s',
+                value: 1000
+            }, {
+                label: '2s',
+                value: 2000
+            }],
+            sliderValue2: 50
         }
     },
 

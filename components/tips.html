@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -253,10 +261,7 @@
 <p>当tips弹窗被实例化时,将会将当前tips弹窗的vue对象引用绑定到 <code>vm.$root.$$tips</code> 上,以方便在任何vue对象内部对tips进行调用</p>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个tips实例,后续调用时通过此id调用组件实例</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>type</code> tips弹窗的类型</p>
 <ul>
@@ -276,10 +281,7 @@
 </ul>
 <p><code>content</code> tips弹出框内容</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>show</code> 用于直接将tips展示在页面中,并于 <code>showTIme</code> 指定的时间后消失<br>调用方法:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">vm.$root.$$tips[<span class="string">'tips1'</span>].show();</div></pre></td></tr></table></figure></p>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><p>第一种调用方法,需要html声明<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"'infoTips1'"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是info'"</span> <span class="attr">type</span>=<span class="string">"info"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"'infoTips2'"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是success'"</span> <span class="attr">type</span>=<span class="string">"success"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"'infoTips3'"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是error'"</span> <span class="attr">type</span>=<span class="string">"error"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"'infoTips4'"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是warn'"</span> <span class="attr">type</span>=<span class="string">"warn"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -295,7 +297,7 @@
     
       <div class="guide-links">
         
-          <span>← <a href="../components/dropdown.html">下拉列表(待建设)</a></span>
+          <span>← <a href="../components/dropdown.html">下拉列表</a></span>
         
         
           <span style="float:right"><a href="../components/messagebox.html">messageBox类弹窗</a> →</span>

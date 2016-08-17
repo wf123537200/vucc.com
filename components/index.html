@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -270,6 +278,9 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">:append-style</span>=<span class="string">"styleObject"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(&#123;</div><div class="line">data: &#123;</div><div class="line">    styleObject: &#123;</div><div class="line">        width: <span class="string">'200px'</span>,</div><div class="line">        background: <span class="string">'red'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3><p>0.5.1<br>    给select增加可输入搜索功能<br>    增加搜索框组件</p>
+<p>0.5.2<br>    给滑动条组件增加固定点模式<br>    下拉列表增加多项选择框,暴露多选框模式</p>
+
 
     
 

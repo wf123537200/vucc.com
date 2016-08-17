@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -261,10 +269,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>resultList</code> 单选框的</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>Array</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code> </code></p>
-</li>
+<li><strong>· 类型：</strong> <code>Array</code></li>
 </ul>
 <p><code>isVertical</code> 单选框的排列方向是否为垂直方向</p>
 <ul>

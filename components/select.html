@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -254,7 +262,7 @@
 <li><p><strong>· 类型：</strong> <code>Object</code></p>
 </li>
 <li><p><strong>· 默认值：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    optsList: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  optsList: [&#123;</div><div class="line">    value: <span class="number">0</span>,</div><div class="line">    label: <span class="string">'value0'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">1</span>,</div><div class="line">    label: <span class="string">'value1'</span></div><div class="line">    <span class="comment">// 特性渲染函数</span></div><div class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">a</span>&gt;</span>111<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div><div class="line">    &#125;</div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">2</span>,</div><div class="line">    label: <span class="string">'value2'</span>,</div><div class="line">    isDisabled: <span class="literal">true</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><code>isOpened</code> 下拉列表是否显示</p>
@@ -264,7 +272,6 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> &gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>value</code> 下拉列表的值</p>
 <ul>
 <li><p><strong>· 类型：</strong> <code>String | Number</code></p>
@@ -286,12 +293,19 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
+<p><code>isEditAble</code> 下拉列表是否可编辑,如果可编辑,则展示框变成输入框,并自带过滤功能</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
 <p><code>filter</code> 下拉列表选项过滤器,传入<code>Function</code>时,会自动传入<code>data.optsList</code>作为参数,方便过滤,当传入<code>Number | String</code>时,会自动对<code>data.optsList</code>做模糊过滤,</p>
 <ul>
 <li><strong>· 类型：</strong> <code>Number | String | Function</code></li>
 </ul>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// dropdown</span></div><div class="line">dropDownData: &#123;</div><div class="line">  optsList: [&#123;</div><div class="line">    value: <span class="number">0</span>,</div><div class="line">    <span class="comment">// 可以不传,默认以value代替label</span></div><div class="line">    label: <span class="string">'value0'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">1</span>,</div><div class="line">    label: <span class="string">'value1'</span>,</div><div class="line">    <span class="comment">// 如果需要特性渲染页面</span></div><div class="line">    renderLi: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="keyword">return</span> <span class="string">`&lt;a&gt;111&lt;/a&gt;`</span></div><div class="line">    &#125;</div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">2</span>,</div><div class="line">    label: <span class="string">'value2'</span>,</div><div class="line">    isDisabled: <span class="literal">true</span> <span class="comment">// options disable</span></div><div class="line">  &#125;]</div><div class="line">&#125;,</div><div class="line"></div><div class="line">dropDownValue: <span class="number">0</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> <span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> <span class="attr">:is-disabled</span>=<span class="string">"true"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> <span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> <span class="attr">:is-disabled</span>=<span class="string">"true"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>select: <span v-text="dropDownValue"></span></p>
 <p><v-select :data="dropDownData" :append-style="{width: '200px'}" :value.sync="dropDownValue"></v-select><v-select :data="dropDownData" :is-disabled="true" :value.sync="dropDownValue"></v-select></p>
 
@@ -304,7 +318,7 @@
           <span>← <a href="../components/radio.html">单选框</a></span>
         
         
-          <span style="float:right"><a href="../components/dropdown.html">下拉列表(待建设)</a> →</span>
+          <span style="float:right"><a href="../components/multi-select.html">多项选择框</a> →</span>
         
       </div>
     

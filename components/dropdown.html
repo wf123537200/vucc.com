@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>下拉列表(待建设) - tbd-design</title>
+        <title>下拉列表 - tbd-design</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link current">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link current">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -247,8 +255,99 @@
 
 <div class="content components with-sidebar" style="list-style: initial;">
     
-    <h1>下拉列表(待建设)</h1>
-    
+    <h1>下拉列表</h1>
+    <p>用于给选择框和多选框等提供下拉列表,也可以单独调用</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>data</code> 传入组件数据,用于渲染<br>data内部的3个可选值,展示label的优先级为,randerLi &gt; label &gt; value,具体使用方法参看综合示例</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Object</code></p>
+</li>
+<li><p><strong>· 示例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  optsList: [&#123;</div><div class="line">    value: <span class="number">0</span>,</div><div class="line">    label: <span class="string">'value0'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">1</span>,</div><div class="line">    label: <span class="string">'value1'</span></div><div class="line">    <span class="comment">// 特性渲染函数</span></div><div class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &lt;a&gt;111&lt;/a&gt;</div><div class="line">    &#125;</div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">2</span>,</div><div class="line">    label: <span class="string">'value2'</span>,</div><div class="line">    isDisabled: <span class="literal">true</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>———-  单选参数  ————–<br><code>isOpened</code> 下拉列表是否显示</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<p><code>value</code> 下拉列表的值</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>String | Number</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> ``</p>
+</li>
+</ul>
+<p><code>onSelect</code> 下拉列表选择函数</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Function</code></p>
+</li>
+<li><p><strong>· 传入参数：</strong> <code>index</code> 当前选择的元素在列表中的位置, <code>value</code> 当前选择元素的值</p>
+</li>
+</ul>
+<p><code>isDisabled</code> 下拉列表是否可以选择</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<p><code>isEditAble</code> 下拉列表是否可编辑,如果可编辑,则展示框变成输入框,并自带过滤功能</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<p><code>filter</code> 下拉列表选项过滤器,传入<code>Function</code>时,会自动传入<code>data.optsList</code>作为参数,方便过滤,当传入<code>Number | String</code>时,会自动对<code>data.optsList</code>做模糊过滤,</p>
+<ul>
+<li><strong>· 类型：</strong> <code>Number | String | Function</code></li>
+</ul>
+<p>———-  单选参数  ————–</p>
+<p>———-  多选参数  ————–<br><code>resultList</code> 绑定外部数据对象的结果</p>
+<ul>
+<li><strong>· 类型：</strong> <code>Array</code></li>
+</ul>
+<p><code>isDisabled</code> 下拉列表是否可以选择</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<p><code>isOpened</code> 下拉列表是否显示</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<p><code>cancelText</code> 取消按钮的展示文字</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>String</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>取 消</code></p>
+</li>
+</ul>
+<p><code>okText</code> 确定按钮的展示文字</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>String</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>确 定</code></p>
+</li>
+</ul>
+<p><code>onOk</code> 确定按钮的回调函数</p>
+<ul>
+<li><strong>· 类型：</strong> <code>Function</code></li>
+</ul>
+<p><code>onCancel</code> 取消按钮的回调函数</p>
+<ul>
+<li><strong>· 类型：</strong> <code>Function</code></li>
+</ul>
+<p>———-  多选参数  ————–</p>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><p><a href="./select.html">单选</a><br><a href="./multi-select.html">多选</a></p>
+
 
     
 

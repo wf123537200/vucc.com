@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -250,10 +258,7 @@
     <h1>警告类弹窗</h1>
     <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个tips实例,后续调用时通过此id调用组件实例</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>type</code> 弹出框类型</p>
 <ul>
@@ -273,17 +278,11 @@
 </ul>
 <p><code>title</code> alert框的标题</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>explain</code> alert框的解释性文字</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>isCloseAble</code> 是否带有关闭按钮</p>
 <ul>

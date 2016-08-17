@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -264,17 +272,11 @@
 </ul>
 <p><code>text</code> 拖拽值的附加文本</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>type</code> 当type为percent的时,将附加text = %</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>value</code> 当前滑动条的值</p>
 <ul>
@@ -290,10 +292,18 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
-<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> sliderValue = <span class="number">0</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line">  <span class="tag">&lt;<span class="name">v-slider</span> <span class="attr">min</span>=<span class="string">"100"</span> <span class="attr">max</span>=<span class="string">"1000"</span> <span class="attr">:value.sync</span>=<span class="string">"sliderValue"</span> <span class="attr">:text</span>=<span class="string">"'px'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-slider</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">style</span>=<span class="string">"margin-top:20px;"</span> <span class="attr">v-model</span>=<span class="string">"sliderValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>valueList</code> 固定点的点阵渲染列表,如果传入,则按照固定点阵进行拖拽</p>
+<ul>
+<li><strong>· 类型：</strong> <code>Array</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">valueList: [&#123;</div><div class="line">               label: <span class="string">'0ms'</span>,</div><div class="line">               value: <span class="number">0</span></div><div class="line">           &#125;, &#123;</div><div class="line">               label: <span class="string">'25ms'</span>,</div><div class="line">               value: <span class="number">25</span></div><div class="line">           &#125;]</div></pre></td></tr></table></figure>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> sliderValue = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> sliderValue2 = <span class="number">50</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-slider</span> <span class="attr">min</span>=<span class="string">"100"</span> <span class="attr">max</span>=<span class="string">"1000"</span> <span class="attr">:value.sync</span>=<span class="string">"sliderValue"</span> <span class="attr">:text</span>=<span class="string">"'px'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-slider</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-slider</span> <span class="attr">:value.sync</span>=<span class="string">"sliderValue2"</span> <span class="attr">:text</span>=<span class="string">"'px'"</span> <span class="attr">:value-list</span>=<span class="string">"sliderValueList"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-slider</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><v-slider min="100" max="1000" :value.sync="sliderValue" :text="'px'"></v-slider></p>
 <input type="text" style="margin-top:20px;" v-model="sliderValue">
+
+<p><v-slider :value.sync="sliderValue2" :text="'px'" :value-list="sliderValueList"></v-slider></p>
+<input type="text" style="margin-top:20px;" v-model="sliderValue2">
 
     
 

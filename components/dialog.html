@@ -46,12 +46,11 @@
 
             .tbd-dropdown-menu {
                 margin: 0!important;
-                padding: 5px 5px 0!important;
+                padding: 0!important;
             }
 
             .tbd-select-selection-rendered {
                 margin: 0!important;
-                line-height: inherit!important;
             }
 
             .tbd-step {
@@ -71,6 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
+        <link rel="stylesheet" href="../css/css/tbd-index.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -145,7 +145,11 @@
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(待建设)</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                </li>
+            
+                <li>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
                 </li>
             
                 <li>
@@ -240,6 +244,10 @@
                     <a href="../components/from.html" class="sidebar-link">表单</a>
                 </li>
             
+                <li>
+                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
+                </li>
+            
         </ul>
     </div>
 </div>
@@ -251,17 +259,11 @@
     <p>使用和messagebox类弹窗类似,只是多了参数</p>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个弹窗实例,后续调用时通过此id调用组件实例</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>title</code> 弹出框主标题</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <p><code>cancelText</code> 取消按钮的展示文字</p>
 <ul>
@@ -279,24 +281,15 @@
 </ul>
 <p><code>onOk</code> 确定按钮的回调函数</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>Function</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>Function</code></li>
 </ul>
 <p><code>onCancel</code> 取消按钮的回调函数</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>Function</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> `</p>
-</li>
+<li><strong>· 类型：</strong> <code>Function</code></li>
 </ul>
 <p><code>onBeforeClose</code> 窗口关闭前调用的函数,返回false可以阻止窗口关闭</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>Function</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> ``</p>
-</li>
+<li><strong>· 类型：</strong> <code>Function</code></li>
 </ul>
 <p><code>hasHeader</code> 是否有header头部</p>
 <ul>
