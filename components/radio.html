@@ -153,7 +153,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表(待建设)</a>
+                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表</a>
                 </li>
             
                 <li>
@@ -267,10 +267,11 @@
 </li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><code>resultList</code> 单选框的</p>
+<p><code>resultList</code> 单选框的结果数组,用于多选的单选框</p>
 <ul>
 <li><strong>· 类型：</strong> <code>Array</code></li>
 </ul>
+<p><code>value</code> 单选框的值</p>
 <p><code>isVertical</code> 单选框的排列方向是否为垂直方向</p>
 <ul>
 <li><p><strong>· 类型：</strong> <code>Boolean</code></p>
@@ -286,10 +287,12 @@
 </li>
 </ul>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// checkbox / radio data</span></div><div class="line">commonListData: [&#123;</div><div class="line">  value: <span class="number">0</span>,</div><div class="line">  label: <span class="string">'value0'</span></div><div class="line">&#125;, &#123;</div><div class="line">  value: <span class="number">1</span>,</div><div class="line">  label: <span class="string">'value1'</span></div><div class="line">&#125;, &#123;</div><div class="line">  value: <span class="number">2</span>,</div><div class="line">  label: <span class="string">'value2'</span>,</div><div class="line">  isDisabled: <span class="literal">true</span></div><div class="line">&#125;],</div><div class="line"></div><div class="line"><span class="comment">// radio result</span></div><div class="line">radioResultList: [<span class="number">1</span>],</div><div class="line">radioMulResultList: [<span class="number">0</span>, <span class="string">''</span>],</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData"</span> <span class="attr">:result-list.sync</span>=<span class="string">"radioResultList"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData"</span> <span class="attr">:result-list.sync</span>=<span class="string">"radioMulResultList"</span> <span class="attr">:is-vertical</span>=<span class="string">"true"</span> <span class="attr">:is-multiple</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData"</span> <span class="attr">:result-list.sync</span>=<span class="string">"radioResultList"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData"</span> <span class="attr">:result-list.sync</span>=<span class="string">"radioMulResultList"</span> <span class="attr">:is-vertical</span>=<span class="string">"true"</span> <span class="attr">:is-multiple</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">         <span class="attr">:as-label</span>=<span class="string">"'desc'"</span> <span class="attr">:value.sync</span>=<span class="string">"radioValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>radio: <span v-text="radioResultList"></span></p>
 <p><v-radio :data="commonListData" :result-list.sync="radioResultList"></v-radio><br>radio: 纵向/多选<span v-text="radioResultList"></span></p>
 <p><v-radio :data="commonListData" :result-list.sync="radioMulResultList" :is-vertical="true" :is-multiple="true"></v-radio></p>
+<p>radio: <span v-text="radioValue"></span></p>
+<p><v-radio :data="commonListData2" :as-value="'name'" :as-label="'desc'" :value.sync="radioValue"></v-radio></p>
 
 
     

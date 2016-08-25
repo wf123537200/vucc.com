@@ -153,7 +153,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表(待建设)</a>
+                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表</a>
                 </li>
             
                 <li>
@@ -256,7 +256,8 @@
 <div class="content components with-sidebar" style="list-style: initial;">
     
     <h1>警告类弹窗</h1>
-    <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个tips实例,后续调用时通过此id调用组件实例</p>
+    <p>调用方式同tips,可以参看tips弹窗组件</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个tips实例,后续调用时通过此id调用组件实例</p>
 <ul>
 <li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
@@ -291,9 +292,9 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>show</code> 用于直接将alert框展示在页面中,并于 <code>showTIme</code> 指定的时间后消失<br>调用方法:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">vm.$root.$$alert[<span class="string">'tips1'</span>].show();</div></pre></td></tr></table></figure></p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>show</code> 用于直接将alert框展示在页面中,并于 <code>showTIme</code> 指定的时间后消失<br>调用方法:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 方法1,需要html声明</span></div><div class="line">vm.$root.$$alert[<span class="string">'tips1'</span>].show();</div><div class="line"><span class="comment">// 方法2,直接调用,需要引入alert组件</span></div><div class="line"><span class="built_in">window</span>.Alert.init(&#123;</div><div class="line">    type: <span class="string">'info'</span>,</div><div class="line">    title: <span class="string">'我是标题'</span>,</div><div class="line">    explain: <span class="string">'我是说明文字'</span>,</div><div class="line">    isCloseAble: <span class="literal">true</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-alert</span> <span class="attr">:id</span>=<span class="string">"'alert1'"</span> <span class="attr">:title</span>=<span class="string">"'我是标题'"</span> <span class="attr">:explain</span>=<span class="string">"'辅助说明性文字'"</span> <span class="attr">:type</span>=<span class="string">"'success'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-alert</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-alert</span> <span class="attr">:id</span>=<span class="string">"'alert2'"</span> <span class="attr">:title</span>=<span class="string">"'我是标题'"</span> <span class="attr">:explain</span>=<span class="string">"'辅助说明性文字'"</span> <span class="attr">:type</span>=<span class="string">"'error'"</span> <span class="attr">:is-close-able</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-alert</span>&gt;</span></div></pre></td></tr></table></figure>
-<div><br>    <v-alert :id="'alert1'" :title="'我是标题'" :explain="'辅助说明性文字'" :type="'success'"></v-alert><v-alert :id="'alert2'" :title="'我是标题'" :explain="'辅助说明性文字'" :type="'error'" :is-close-able="true"></v-alert><br><br>    <v-button type="primary" @click="showAlert('alert1')">alert success</v-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<v-button type="primary" @click="showAlert('alert2')">alert error</v-button><br></div>
+<div><br>    <v-alert :id="'alert1'" :title="'我是标题'" :explain="'辅助说明性文字'" :type="'success'"></v-alert><v-alert :id="'alert2'" :title="'我是标题'" :explain="'辅助说明性文字'" :type="'error'" :is-close-able="true"></v-alert><br><br>    <v-button type="primary" @click="showAlert('alert1')">alert success</v-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<v-button type="primary" @click="showAlert('alert2')">alert error</v-button><br>    <v-button @click="showAlert2()">alert第二种调用方法</v-button><br></div>
 
 
     

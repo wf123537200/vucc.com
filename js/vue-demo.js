@@ -71,7 +71,20 @@ new Vue({
                 isDisabled: true
             }],
 
+            commonListData2: [{
+                name: 0,
+                desc: 'value0'
+            }, {
+                name: 1,
+                desc: '<a>111</a>'
+            }, {
+                name: 2,
+                desc: 'value1',
+                isDisabled: true
+            }],
+
             checkboxResultList: [0, '', 2],
+            radioValue: 0,
 
             // radio
             radioResultList: [1],
@@ -91,6 +104,23 @@ new Vue({
                 }, {
                     value: 2,
                     label: 'value2',
+                    isDisabled: true
+                }]
+            },
+
+            dropDownData2: {
+                optsList: [{
+                    name: 0,
+                    desc: 'value0'
+                }, {
+                    name: 1,
+                    desc: 'value1',
+                    renderLi: function() {
+                        return `<a>111</a>`
+                    }
+                }, {
+                    name: 2,
+                    desc: 'value2',
                     isDisabled: true
                 }]
             },

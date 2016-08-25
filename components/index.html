@@ -153,7 +153,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表(待建设)</a>
+                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表</a>
                 </li>
             
                 <li>
@@ -278,8 +278,26 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">:append-style</span>=<span class="string">"styleObject"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(&#123;</div><div class="line">data: &#123;</div><div class="line">    styleObject: &#123;</div><div class="line">        width: <span class="string">'200px'</span>,</div><div class="line">        background: <span class="string">'red'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><code>asValue</code> 由于有些数据输入不规则,可能不是采用<code>value</code>作为key,所以这里可以传入一个字符串,指定用于渲染数据的key<br><code>asLabel</code> 由于有些数据输入不规则,可能不是采用<code>label</code>作为key,所以这里可以传入一个字符串,指定用于渲染数据的key</p>
+<p>支持组件radio, checkbox select</p>
+<ul>
+<li><strong>· 类型：</strong> <code>String</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span> <span class="attr">:value.sync</span>=<span class="string">"radioValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span><span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3><p>0.5.1<br>    给select增加可输入搜索功能<br>    增加搜索框组件</p>
 <p>0.5.2<br>    给滑动条组件增加固定点模式<br>    下拉列表增加多项选择框,暴露多选框模式</p>
+<p>0.5.3<br>    修正label-dropdown的disable返回值报错的问题</p>
+<p>0.5.4<br>    给checkbox,radio,select增加value,label别名<br>    修复label-dropdown下拉列表点击收缩问题</p>
+<p>0.5.5<br>    pane修改包裹section标签为div</p>
+<hr>
+<p>0.5.6<br>    search 增加两个属性</p>
+<p>0.5.7<br>    pagination 增加注释和onsizechange方法</p>
+<p>0.5.8<br>    checkbox resultList去掉空属性</p>
+<p>0.5.9 fixed tabs下pane没有事件的bug</p>
+<p>0.5.10 给table增加全选,隐藏等功能,修复transfer 全选的bug</p>
+<p>0.5.13 多选框提供可配置的搜索栏目部分</p>
+<p>0.5.15 多选框样式调整</p>
+<p>0.5.17 tips alert增加调用方式,可以通过windows直接调用</p>
 
 
     
