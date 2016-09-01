@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>表格 - tbd-design</title>
+        <title>表格 - vucc</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -33,36 +33,36 @@
                 font-weight: inherit!important;
             }
 
-            h3.tbd-dialog-title:before, .tbd-progress-title h3:before, .tbd-step h3:before, .tbd-transfer h3:before {
+            h3.vc-dialog-title:before, .vc-progress-title h3:before, .vc-step h3:before, .vc-transfer h3:before {
                 content: ''!important;
             }
-            .tbd-alert h3, .tbd-collapse-group h3, .tbd-collapse h3, .tbd-progress-title h3, .tbd-step h3, .tbd-transfer h3 {
+            .vc-alert h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
                 margin: 0!important;
             }
 
-            .tbd-alert h3:before, .tbd-collapse-group h3:before, .tbd-collapse h3:before {
+            .vc-alert h3:before, .vc-collapse-group h3:before, .vc-collapse h3:before {
                 content: ''!important;
             }
 
-            .tbd-dropdown-menu {
+            .vc-dropdown-menu {
                 margin: 0!important;
                 padding: 0!important;
             }
 
-            .tbd-select-selection-rendered {
+            .vc-select-selection-rendered {
                 margin: 0!important;
             }
 
-            .tbd-step {
+            .vc-step {
                 margin: 0 0 0 -100px!important;
                 line-height: inherit!important;
             }
-            .tbd-step p, .tbd-timeline p {
+            .vc-step p, .vc-timeline p {
                 line-height: inherit!important;
                 margin: inherit!important;
             }
 
-            .tbd-tree ul {
+            .vc-tree ul {
                 margin: 0!important;
                 line-height: inherit!important;
             }
@@ -70,7 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
-        <link rel="stylesheet" href="../css/css/tbd-index.css">
+        <link rel="stylesheet" href="../css/css/style.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -82,7 +82,7 @@
             <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
-        <span>tbd-desing(vue)</span>
+        <span>vucc</span>
     </a>
     <ul id="nav">
         <li>
@@ -93,7 +93,6 @@
 <li><a href="../guide/index.html" class="nav-link">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
 <li><a href="../components/index.html" class="nav-link current">组件</a></li>
-<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
 
     </ul>
 </div>
@@ -110,7 +109,6 @@
 <li><a href="../guide/index.html" class="nav-link">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
 <li><a href="../components/index.html" class="nav-link current">组件</a></li>
-<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
 
     </ul>
     <div class="list">
@@ -261,7 +259,7 @@
 <li><p><strong>· 类型：</strong> <code>Array</code></p>
 </li>
 <li><p><strong>· 示例：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">columns: [&#123;</div><div class="line">    title: <span class="string">'姓名'</span>,</div><div class="line">    <span class="comment">// 和data中数据key对应</span></div><div class="line">    dataIndex: <span class="string">'name'</span>,</div><div class="line">    render(text, item) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">`&lt;a href="#"&gt;<span class="subst">$&#123;text&#125;</span>&lt;/a&gt;`</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;, &#123;</div><div class="line">    title: <span class="string">'年龄'</span>,</div><div class="line">    dataIndex: <span class="string">'age'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    title: <span class="string">'住址'</span>,</div><div class="line">    dataIndex: <span class="string">'address'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    <span class="comment">// 不传入dataIndex时,将渲染到最后一列</span></div><div class="line">    title: <span class="string">'操作'</span>,</div><div class="line">    render(text, item) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">`&lt;a class="tbd-inline" @click="clickOperate"&gt;操作一&lt;/a&gt;</span></div><div class="line">                &lt;span class="tbd-divider"&gt;&lt;/span&gt;</div><div class="line">              &lt;a class="tbd-inline"&gt;操作二&lt;/a&gt;`;</div><div class="line">    &#125;</div><div class="line">&#125;]</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">columns: [&#123;</div><div class="line">    title: <span class="string">'姓名'</span>,</div><div class="line">    <span class="comment">// 和data中数据key对应</span></div><div class="line">    dataIndex: <span class="string">'name'</span>,</div><div class="line">    render(text, item) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">`&lt;a href="#"&gt;<span class="subst">$&#123;text&#125;</span>&lt;/a&gt;`</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;, &#123;</div><div class="line">    title: <span class="string">'年龄'</span>,</div><div class="line">    dataIndex: <span class="string">'age'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    title: <span class="string">'住址'</span>,</div><div class="line">    dataIndex: <span class="string">'address'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    <span class="comment">// 不传入dataIndex时,将渲染到最后一列</span></div><div class="line">    title: <span class="string">'操作'</span>,</div><div class="line">    render(text, item) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">`&lt;a class="vc-inline" @click="clickOperate"&gt;操作一&lt;/a&gt;</span></div><div class="line">                &lt;span class="vc-divider"&gt;&lt;/span&gt;</div><div class="line">              &lt;a class="vc-inline"&gt;操作二&lt;/a&gt;`;</div><div class="line">    &#125;</div><div class="line">&#125;]</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><code>data</code> 表格渲染数据,用于渲染table组件数据,不传入columns</p>
@@ -301,7 +299,7 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
-<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">table: &#123;</div><div class="line">      data: (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> res = [];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</div><div class="line">          res.push(&#123;</div><div class="line">            key: i,</div><div class="line">            name: <span class="string">`name<span class="subst">$&#123;i&#125;</span>`</span>,</div><div class="line">            age: <span class="number">32</span>,</div><div class="line">            address: <span class="string">`address<span class="subst">$&#123;i&#125;</span>号`</span></div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">      &#125;)(),</div><div class="line">      columns: [&#123;</div><div class="line">        title: <span class="string">'姓名'</span>,</div><div class="line">        dataIndex: <span class="string">'name'</span>,</div><div class="line">        render(text, item) &#123;</div><div class="line">          <span class="keyword">return</span> <span class="string">`&lt;a href="#"&gt;<span class="subst">$&#123;text&#125;</span>&lt;/a&gt;`</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'年龄'</span>,</div><div class="line">        dataIndex: <span class="string">'age'</span></div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'住址'</span>,</div><div class="line">        dataIndex: <span class="string">'address'</span></div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'操作'</span>,</div><div class="line">        render(text, item) &#123;</div><div class="line">          <span class="keyword">return</span> <span class="string">`&lt;a class="tbd-inline"&gt;操作一&lt;/a&gt;</span></div><div class="line">                    &lt;span class="tbd-divider"&gt;&lt;/span&gt;</div><div class="line">                  &lt;a class="tbd-inline"&gt;操作二&lt;/a&gt;`;</div><div class="line">        &#125;</div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'操作'</span>,</div><div class="line">        <span class="comment">// 如果需要绑定事件的,使用以下方式进行绑定</span></div><div class="line">        hasPartial: <span class="literal">true</span>,</div><div class="line">        render(text, item) &#123;</div><div class="line">          <span class="comment">// step1.构建模板,记得传入id</span></div><div class="line">          Vue.partial(<span class="string">'xxx'</span>, <span class="string">`&lt;a class="tbd-inline" @click="showTipsWay2"&gt;操作一&lt;/a&gt;</span></div><div class="line">                    &lt;span class="tbd-divider"&gt;&lt;/span&gt;</div><div class="line">                  &lt;a class="tbd-inline"&gt;操作二&lt;/a&gt;`);</div><div class="line"></div><div class="line">          <span class="keyword">return</span> &#123;</div><div class="line">            <span class="comment">// 模板上声明的id</span></div><div class="line">            id: <span class="string">'xxx'</span>,</div><div class="line">            <span class="comment">// 需要绑定的函数,函数名必须和绑定函数一致</span></div><div class="line">            functions: &#123;</div><div class="line">              <span class="comment">// 这里注意,可以要用闭包引入_this进行传值</span></div><div class="line">              showTipsWay2: _this.showTipsWay2</div><div class="line">            &#125;</div><div class="line">          &#125;;</div><div class="line">        &#125;</div><div class="line">      &#125;]</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">table: &#123;</div><div class="line">      data: (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> res = [];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</div><div class="line">          res.push(&#123;</div><div class="line">            key: i,</div><div class="line">            name: <span class="string">`name<span class="subst">$&#123;i&#125;</span>`</span>,</div><div class="line">            age: <span class="number">32</span>,</div><div class="line">            address: <span class="string">`address<span class="subst">$&#123;i&#125;</span>号`</span></div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">      &#125;)(),</div><div class="line">      columns: [&#123;</div><div class="line">        title: <span class="string">'姓名'</span>,</div><div class="line">        dataIndex: <span class="string">'name'</span>,</div><div class="line">        render(text, item) &#123;</div><div class="line">          <span class="keyword">return</span> <span class="string">`&lt;a href="#"&gt;<span class="subst">$&#123;text&#125;</span>&lt;/a&gt;`</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'年龄'</span>,</div><div class="line">        dataIndex: <span class="string">'age'</span></div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'住址'</span>,</div><div class="line">        dataIndex: <span class="string">'address'</span></div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'操作'</span>,</div><div class="line">        render(text, item) &#123;</div><div class="line">          <span class="keyword">return</span> <span class="string">`&lt;a class="vc-inline"&gt;操作一&lt;/a&gt;</span></div><div class="line">                    &lt;span class="vc-divider"&gt;&lt;/span&gt;</div><div class="line">                  &lt;a class="vc-inline"&gt;操作二&lt;/a&gt;`;</div><div class="line">        &#125;</div><div class="line">      &#125;, &#123;</div><div class="line">        title: <span class="string">'操作'</span>,</div><div class="line">        <span class="comment">// 如果需要绑定事件的,使用以下方式进行绑定</span></div><div class="line">        hasPartial: <span class="literal">true</span>,</div><div class="line">        render(text, item) &#123;</div><div class="line">          <span class="comment">// step1.构建模板,记得传入id</span></div><div class="line">          Vue.partial(<span class="string">'xxx'</span>, <span class="string">`&lt;a class="vc-inline" @click="showTipsWay2"&gt;操作一&lt;/a&gt;</span></div><div class="line">                    &lt;span class="vc-divider"&gt;&lt;/span&gt;</div><div class="line">                  &lt;a class="vc-inline"&gt;操作二&lt;/a&gt;`);</div><div class="line"></div><div class="line">          <span class="keyword">return</span> &#123;</div><div class="line">            <span class="comment">// 模板上声明的id</span></div><div class="line">            id: <span class="string">'xxx'</span>,</div><div class="line">            <span class="comment">// 需要绑定的函数,函数名必须和绑定函数一致</span></div><div class="line">            functions: &#123;</div><div class="line">              <span class="comment">// 这里注意,可以要用闭包引入_this进行传值</span></div><div class="line">              showTipsWay2: _this.showTipsWay2</div><div class="line">            &#125;</div><div class="line">          &#125;;</div><div class="line">        &#125;</div><div class="line">      &#125;]</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-table</span> <span class="attr">:data</span>=<span class="string">"table.data"</span> <span class="attr">:columns</span>=<span class="string">"table.columns"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-table</span>&gt;</span></div></pre></td></tr></table></figure>
 <div><br><v-table :data="table.data" :columns="table.columns"></v-table><br></div>
 

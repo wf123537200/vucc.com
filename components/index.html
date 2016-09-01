@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>全局参数说明 - tbd-design</title>
+        <title>全局参数说明 - vucc</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -33,36 +33,36 @@
                 font-weight: inherit!important;
             }
 
-            h3.tbd-dialog-title:before, .tbd-progress-title h3:before, .tbd-step h3:before, .tbd-transfer h3:before {
+            h3.vc-dialog-title:before, .vc-progress-title h3:before, .vc-step h3:before, .vc-transfer h3:before {
                 content: ''!important;
             }
-            .tbd-alert h3, .tbd-collapse-group h3, .tbd-collapse h3, .tbd-progress-title h3, .tbd-step h3, .tbd-transfer h3 {
+            .vc-alert h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
                 margin: 0!important;
             }
 
-            .tbd-alert h3:before, .tbd-collapse-group h3:before, .tbd-collapse h3:before {
+            .vc-alert h3:before, .vc-collapse-group h3:before, .vc-collapse h3:before {
                 content: ''!important;
             }
 
-            .tbd-dropdown-menu {
+            .vc-dropdown-menu {
                 margin: 0!important;
                 padding: 0!important;
             }
 
-            .tbd-select-selection-rendered {
+            .vc-select-selection-rendered {
                 margin: 0!important;
             }
 
-            .tbd-step {
+            .vc-step {
                 margin: 0 0 0 -100px!important;
                 line-height: inherit!important;
             }
-            .tbd-step p, .tbd-timeline p {
+            .vc-step p, .vc-timeline p {
                 line-height: inherit!important;
                 margin: inherit!important;
             }
 
-            .tbd-tree ul {
+            .vc-tree ul {
                 margin: 0!important;
                 line-height: inherit!important;
             }
@@ -70,7 +70,7 @@
         
             <link rel="stylesheet" href="../css/page.css">
         
-        <link rel="stylesheet" href="../css/css/tbd-index.css">
+        <link rel="stylesheet" href="../css/css/style.css">
         
     </head>
     <body id="app" style="background: #ffffff;">
@@ -82,7 +82,7 @@
             <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
-        <span>tbd-desing(vue)</span>
+        <span>vucc</span>
     </a>
     <ul id="nav">
         <li>
@@ -93,7 +93,6 @@
 <li><a href="../guide/index.html" class="nav-link">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
 <li><a href="../components/index.html" class="nav-link current">组件</a></li>
-<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
 
     </ul>
 </div>
@@ -110,7 +109,6 @@
 <li><a href="../guide/index.html" class="nav-link">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
 <li><a href="../components/index.html" class="nav-link current">组件</a></li>
-<li id="rebuildLink"><a href="../rebuild/index.html" class="nav-link">重构稿</a></li>
 
     </ul>
     <div class="list">
@@ -284,21 +282,7 @@
 <li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span> <span class="attr">:value.sync</span>=<span class="string">"radioValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span><span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3><p>0.5.1<br>    给select增加可输入搜索功能<br>    增加搜索框组件</p>
-<p>0.5.2<br>    给滑动条组件增加固定点模式<br>    下拉列表增加多项选择框,暴露多选框模式</p>
-<p>0.5.3<br>    修正label-dropdown的disable返回值报错的问题</p>
-<p>0.5.4<br>    给checkbox,radio,select增加value,label别名<br>    修复label-dropdown下拉列表点击收缩问题</p>
-<p>0.5.5<br>    pane修改包裹section标签为div</p>
-<hr>
-<p>0.5.6<br>    search 增加两个属性</p>
-<p>0.5.7<br>    pagination 增加注释和onsizechange方法</p>
-<p>0.5.8<br>    checkbox resultList去掉空属性</p>
-<p>0.5.9 fixed tabs下pane没有事件的bug</p>
-<p>0.5.10 给table增加全选,隐藏等功能,修复transfer 全选的bug</p>
-<p>0.5.13 多选框提供可配置的搜索栏目部分</p>
-<p>0.5.15 多选框样式调整</p>
-<p>0.5.17 tips alert增加调用方式,可以通过windows直接调用</p>
-
+<h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3>
 
     
 
