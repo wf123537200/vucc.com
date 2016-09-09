@@ -82,7 +82,6 @@
             <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
-        <span>vucc</span>
     </a>
     <ul id="nav">
         <li>
@@ -282,7 +281,8 @@
 <li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span> <span class="attr">:value.sync</span>=<span class="string">"radioValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span><span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3>
+<h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3><p>1.1.0 release<br>    去掉分模块打包,增加scss-loader, vue模块直接生成代码<br>1.2.0 release<br>    整体打包方式变化,提供两种暴露模式<br>        整体包: 包含样式等,存放在dist/index.js下<br>        分散包: 样式和代码分离,分别存放于dist/split.js, dist/style.css</p>
+
 
     
 
