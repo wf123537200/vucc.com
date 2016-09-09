@@ -2,6 +2,7 @@ new Vue({
     el: '#app',
     components: window.__vc_design__,
     data() {
+        const _this = this;
         return {
             // multi-select
             multiDataList: {
@@ -83,7 +84,7 @@ new Vue({
                 isDisabled: true
             }],
 
-            checkboxResultList: [0, '', 2],
+            checkboxResultList: [0, 2],
             radioValue: 0,
 
             // radio
@@ -94,7 +95,7 @@ new Vue({
             dropDownData: {
                 optsList: [{
                     value: 0,
-                    label: 'value0'
+                    label: 0
                 }, {
                     value: 1,
                     label: 'value1',
@@ -110,16 +111,16 @@ new Vue({
 
             dropDownData2: {
                 optsList: [{
-                    name: 0,
+                    value: 0,
                     desc: 'value0'
                 }, {
-                    name: 1,
+                    value: 1,
                     desc: 'value1',
                     renderLi: function() {
                         return `<a>111</a>`
                     }
                 }, {
-                    name: 2,
+                    value: 2,
                     desc: 'value2',
                     isDisabled: true
                 }]
@@ -144,6 +145,7 @@ new Vue({
                 })(),
                 columns: [{
                     title: '姓名',
+                    style: {width: '200px'},
                     dataIndex: 'name',
                     render(text, item) {
                         return `<a href="#">${text}</a>`;
@@ -156,10 +158,18 @@ new Vue({
                     dataIndex: 'address'
                 }, {
                     title: '操作',
+                    hasPartial: true,
                     render(text, item) {
-                        return `<a class="tbd-inline" @click="clickOperate">操作一</a>
-                        <span class="tbd-divider"></span>
-                      <a class="tbd-inline">操作二</a>`;
+                        Vue.partial('xxx', `<a class="vc-inline" @click="showTipsWay2">操作一</a>
+                        <span class="vc-divider"></span>
+                      <a class="vc-inline">操作二</a>`);
+
+                        return {
+                            id: 'xxx',
+                            functions: {
+                                showTipsWay2: _this.showTipsWay2
+                            }
+                        };
                     }
                 }]
             },
@@ -179,7 +189,7 @@ new Vue({
             },
 
             // staff
-            staff : {
+            staff: {
                 data : [
                     {userId:1, userName: 'hill'},
                     {userId:2, userName: 'shijia'},
@@ -307,14 +317,37 @@ new Vue({
         },
 
         showTipsWay2() {
-            window.Tips.init('tips1', 'info', 'lalalala');
-
-            this.$root.$$tips['tips1'].show();
+            window.Tips.init('', 'info', 'lalalala');
         },
 
         // alert
         showAlert(id) {
             this.$root.$$alert[id].show();
+        },
+
+        showAlert2() {
+            window.Alert.init({
+                type: 'info',
+                title: '我是标题',
+                explain: '我是说明文字',
+                isCloseAble: true
+            });
+        },
+
+        // message box
+        showMb(id) {
+            this.$root.$$messageBox[id].show();
+        },
+
+        showMb2(id) {
+            window.MessageBox.init({
+                type: 'confirm',
+                title: '标题',
+                explain: '我就是一个解释!',
+                onOk() {
+                    console.log('我是OK!');
+                }
+            });
         },
 
         // 展示对话框
@@ -328,17 +361,6 @@ new Vue({
 
         dialogCallbackFn2() {
             alert('cancel callback !');
-        },
-
-        // message box
-        showMb(id) {
-            this.$root.$$messageBox[id].show();
-        },
-
-        showTipsWay2() {
-            window.Tips.init('tips1', 'info', 'lalalala');
-
-            this.$root.$$tips['tips1'].show();
         },
 
         showLoading(value) {
