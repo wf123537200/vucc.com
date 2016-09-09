@@ -1,6 +1,6 @@
 new Vue({
     el: '#app',
-    components: window.__tbd_design__,
+    components: window.__vc_design__,
     data() {
         return {
             // multi-select
