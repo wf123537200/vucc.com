@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     components: window.__vc_design__,
     data() {
-        const _this = this;
+        var _this = this;
         return {
             // multi-select
             multiDataList: {
@@ -132,7 +132,7 @@ new Vue({
             table: {
                 data: (function() {
                     var res = [];
-                    for (let i = 0; i < 50; i++) {
+                    for (var i = 0; i < 50; i++) {
                         res.push({
                             key: i,
                             name: `name${i}`,
@@ -376,7 +376,7 @@ new Vue({
 
     ready() {
         // 动态化兼容测试
-        const _this = this;
+        var _this = this;
         setTimeout(function() {
             _this.activeIndex = 1;
             // checkbox / radio 测试
