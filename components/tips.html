@@ -253,7 +253,8 @@
 <div class="content components with-sidebar" style="list-style: initial;">
     
     <h1>tips弹窗</h1>
-    <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>tips组件提供了两种实例化方式,<br>1,可以采用常规的方法对tips进行声明,如:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"myTips"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是info'"</span> <span class="attr">type</span>=<span class="string">"info"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div></pre></td></tr></table></figure></p>
+    <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/tips’;</name></p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>tips组件提供了两种实例化方式,<br>1,可以采用常规的方法对tips进行声明,如:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"myTips"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是info'"</span> <span class="attr">type</span>=<span class="string">"info"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>2,为了方便代码中使用,tips类的弹出窗口还提供了另一种纯js的实例化机制<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">window</span>.Tips.init(type, content, [id, showTime, appendClass, appendStyle]);</div></pre></td></tr></table></figure></p>
 <p>当tips弹窗被实例化时,将会将当前tips弹窗的vue对象引用绑定到 <code>vm.$root.$$tips</code> 上,以方便在任何vue对象内部对tips进行调用</p>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个tips实例,后续调用时通过此id调用组件实例</p>
