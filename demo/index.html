@@ -7,7 +7,7 @@
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script>
-            window.PAGE_TYPE = ""
+            window.PAGE_TYPE = "demo"
         </script>
         <link rel="icon" href="../images/logo.png" type="image/x-icon">
         <script>
@@ -68,7 +68,7 @@
             }
         </style>
         
-            <link rel="stylesheet" href="./css/index.css">
+            <link rel="stylesheet" href="../css/page.css">
         
         <link rel="stylesheet" href="../css/css/style.css">
         
@@ -79,28 +79,78 @@
             <a class="logo" href="/"></a>
         </div>
         
-            <div id="hero">
-  <div class="inner">
+            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <a id="logo" href="/">
+        <img src="../images/logo.png">
+    </a>
     <ul id="nav">
-      <li><a href="./guide/index.html" class="nav-link">说明</a></li>
-      <li><a href="./scaffold/index.html" class="nav-link">脚手架</a></li>
-      <li><a href="./demo/index.html" class="nav-link">组件demo集合</a></li>
-      <li><a href="./components/index.html" class="nav-link">组件</a></li>
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../demo/index.html" class="nav-link current">组件demo集合</a></li>
+<li><a href="../components/index.html" class="nav-link">组件</a></li>
+
     </ul>
-    <div id="logo-wrap">
-      <img id="logo" src="./images/logo.png">
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form" style="display: none;">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="../guide/index.html" class="nav-link">说明</a></li>
+<li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../demo/index.html" class="nav-link current">组件demo集合</a></li>
+<li><a href="../components/index.html" class="nav-link">组件</a></li>
+
+    </ul>
+    <div class="list">
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="../demo/index.html" class="sidebar-link current"></a>
+                </li>
+            
+        </ul>
     </div>
-    <p class="desc">vue 组件库</p>
-  </div>
 </div>
 
 
-            <script src="./js/docsearch.js"></script>
-            <script src="./js/smooth-scroll.min.js"></script>
-            <script src="./js/common.js"></script>
-            <script src="./js/app.js"></script>
+<div class="content demo with-sidebar" style="list-style: initial;">
+    
+    <h1></h1>
+    <p><link rel="stylesheet" href="/css/css/style.css"></p>
+<p><div id="app"><br>    <app></app><br></div></p>
+<script src="/js/demo.js"></script>
+<script>
+    document.querySelector('#main .sidebar').style.display = 'none';
+    document.querySelector('#main .demo').style.padding = 0;
+    document.querySelector('#main .demo').style.margin = 0;
+    document.querySelector('#main .demo').style.width = '100%';
+    document.querySelector('#main .demo').style.maxWidth = '3000px';
+</script>
 
-            <script src="./js/fastclick.min.js"></script>
+
+    
+
+    
+</div>
+
+                
+            </div>
+            <script src="../js/docsearch.js"></script>
+            <script src="../js/smooth-scroll.min.js"></script>
+            <script src="../js/common.js"></script>
+            <script src="../js/app.js"></script>
+            <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
@@ -108,7 +158,8 @@
             </script>
 
             <!-- add by zakwu -->
-            <script src="./js/vue-demo.js"></script>
+            <script src="../js/vue-demo.js"></script>
+
         
         <script>
             if(location.host.indexOf('github') >= 0) {

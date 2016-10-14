@@ -91,6 +91,7 @@
 </li>
 <li><a href="../guide/index.html" class="nav-link current">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../demo/index.html" class="nav-link">组件demo集合</a></li>
 <li><a href="../components/index.html" class="nav-link">组件</a></li>
 
     </ul>
@@ -107,6 +108,7 @@
 </li>
 <li><a href="../guide/index.html" class="nav-link current">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../demo/index.html" class="nav-link">组件demo集合</a></li>
 <li><a href="../components/index.html" class="nav-link">组件</a></li>
 
     </ul>
@@ -130,6 +132,12 @@
     
     <h1></h1>
     <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>vucc: vue pc端组件库,转为快速开发而生</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>chrome 49.0.2623：全兼容</p>
+<p>firefox 41.0.1：全兼容</p>
+<p>ie10~11：全兼容</p>
+<p>ie9：css3动画无效，其他都兼容</p>
+<p>ie8：css3属性均无效，其中以圆角效果为主的组件效果比较差。</p>
+<p>建议在以ie9以上浏览器为主的情况下，采用本组件。</p>
 <h2 id="安装和使用方法"><a href="#安装和使用方法" class="headerlink" title="安装和使用方法"></a>安装和使用方法</h2><h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>a) npm引入</p>
 <p>npm install vucc</p>
 <p>或者:</p>
@@ -204,7 +212,207 @@ v-bind:class 简写为 :class
 <h3 id="webpack中配置"><a href="#webpack中配置" class="headerlink" title="webpack中配置"></a>webpack中配置</h3><p>sassLoader: {<br>    includePaths: [path.join(__dirname, ‘./src’)] // ./src下新建theme.scss即可<br>}</p>
 <h3 id="theme-scss中覆盖使用"><a href="#theme-scss中覆盖使用" class="headerlink" title="theme.scss中覆盖使用"></a>theme.scss中覆盖使用</h3><p>在theme.scss中覆盖当前样式变量,具体样式变量如下<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">// prefix classname</div><div class="line">$css-prefix: vc-;</div><div class="line">$iconfont-css-prefix: vci;</div><div class="line"></div><div class="line">// color</div><div class="line">$base-color: #1b1e25;</div><div class="line">$gray-color: #8b91a0;</div><div class="line">$blue-color: #3598dc;</div><div class="line">$info-color: $blue-color;</div><div class="line">$primary-color: #57cc95;</div><div class="line">$success-color: #57cc95;</div><div class="line">$error-color: #f35958;</div><div class="line">$warning-color: #f9ba46;</div><div class="line"></div><div class="line">// border color</div><div class="line">$border-color: #e5e9ec;</div><div class="line">$border-focus-color: #d2d4d8;</div><div class="line">$border-disabled-color: #d2d4d8;</div><div class="line">$box-shadow: 0 1px 4px rgba(40, 40, 40, 0.15);</div><div class="line">$border-color-split: #f0f0f0;</div><div class="line"></div><div class="line">// margin &amp;&amp; padding</div><div class="line">$gutter-base:           20px;</div><div class="line">$gutter-sm:             10px;</div><div class="line">$gutter-lg:             30px;</div><div class="line"></div><div class="line">// form item height</div><div class="line">$height: 36px;</div><div class="line">$height-xs: 28px;</div><div class="line">$height-sm: 32px;</div><div class="line">$height-lg: 40px;</div><div class="line"></div><div class="line">// background</div><div class="line">$base-bg: #e5e9ec;</div><div class="line">$body-bg: $base-bg;</div><div class="line">$hover-bg: #f1f4f6;</div><div class="line">$light-bg: #f1f4f6;</div><div class="line"></div><div class="line">// form item height</div><div class="line">$height:    36px;</div><div class="line">$height-xs: 28px;</div><div class="line">$height-sm: 32px;</div><div class="line">$height-lg: 40px;</div><div class="line"></div><div class="line">$font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB", "Microsoft Yahei", "\5b8b\4f53",Arial,sans-serif;</div><div class="line">$code-family: Consolas,Menlo,Courier,monospace;</div><div class="line">$font-size-base: 12px;</div><div class="line">$font-size-lg: 14px;</div><div class="line">$font-size-xl: 16px;</div><div class="line">$line-height-base: 1.5;</div><div class="line">$border-radius-base: 3px;</div><div class="line">$border-radius-lg: 5px;</div><div class="line"></div><div class="line">// cursor state</div><div class="line">$cursor-disabled: not-allowed;</div><div class="line">$cursor-pointer: pointer;</div><div class="line"></div><div class="line">// link</div><div class="line">$link-color:            $blue-color;</div><div class="line">$link-hover-color:      tint($link-color, 20%);</div><div class="line">$link-active-color:     shade($link-color, 5%);</div><div class="line">$link-hover-decoration: none;</div><div class="line"></div><div class="line">// scrollbar</div><div class="line">$scrollbar-width: 8px;</div><div class="line">$scrollbar-height: 8px;</div><div class="line">$scrollbar-thumb-bg: #bebdbd;</div><div class="line">$scrollbar-thumb-hover-bg: #666;</div><div class="line">$scrollbar-track-piece-decrement-bg: #f5f5f5;</div><div class="line">$scrollbar-track-piece-increment-bg: #f5f5f5;</div><div class="line"></div><div class="line">// animation</div><div class="line">$ease-out:              cubic-bezier(0.215, 0.61, 0.355, 1);</div><div class="line">$ease-in:               cubic-bezier(0.55, 0.055, 0.675, 0.19);</div><div class="line">$ease-in-out:           cubic-bezier(0.645, 0.045, 0.355, 1);</div><div class="line">$ease-out-back:         cubic-bezier(0.12, 0.4, 0.29, 1.46);</div><div class="line">$ease-in-back:          cubic-bezier(0.71, -0.46, 0.88, 0.6);</div><div class="line">$ease-in-out-back:      cubic-bezier(0.71, -0.46, 0.29, 1.46);</div><div class="line">$ease-out-circ:         cubic-bezier(0.08, 0.82, 0.17, 1);</div><div class="line">$ease-in-circ:          cubic-bezier(0.6, 0.04, 0.98, 0.34);</div><div class="line">$ease-in-out-circ:      cubic-bezier(0.78, 0.14, 0.15, 0.86);</div><div class="line">$ease-out-quint:        cubic-bezier(0.23, 1, 0.32, 1);</div><div class="line">$ease-in-quint:         cubic-bezier(0.755, 0.05, 0.855, 0.06);</div><div class="line">$ease-in-out-quint:     cubic-bezier(0.86, 0, 0.07, 1);</div><div class="line"></div><div class="line">// input</div><div class="line">$input-padding: 3px 10px;</div><div class="line">$input-padding-lg: 3px 20px;</div></pre></td></tr></table></figure></p>
 <h2 id="组件示例"><a href="#组件示例" class="headerlink" title="组件示例"></a>组件示例</h2><p>  <a href="/components/">组件示例</a></p>
+<h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><div class="doc-icons" style="height: 2350px;"></div>
 
+<script type="text/javascript">
+    (function resetIcons() {
+        //图标
+        var $icons = document.querySelector('.doc-icons');
+        var iconsDirection = [
+            'step-backward',
+            'step-forward',
+            'fast-backward',
+            'fast-forward',
+            'shrink',
+            'arrow-salt',
+            'down',
+            'up',
+            'left',
+            'right',
+            'caret-down',
+            'caret-up',
+            'caret-left',
+            'caret-right',
+            'caret-circle-left',
+            'caret-circle-right',
+            'caret-circle-o-left',
+            'caret-circle-o-right',
+            'circle-left',
+            'circle-right',
+            'circle-o-left',
+            'circle-o-right',
+            'double-left',
+            'double-right',
+            'verticle-right',
+            'verticle-left',
+            'forward',
+            'backward',
+            'rollback',
+            'retweet',
+            'swap',
+            'swap-left',
+            'swap-right',
+            'arrow-right',
+            'arrow-up',
+            'arrow-down',
+            'arrow-left',
+            'play-circle',
+            'play-circle-o',
+            'circle-up',
+            'circle-down',
+            'circle-o-up',
+            'circle-o-down',
+            'caret-circle-o-up',
+            'caret-circle-o-down',
+            'caret-circle-up',
+            'caret-circle-down',
+            'caret-square-right',
+            'question',
+            'question-circle-o',
+            'question-circle',
+            'plus',
+            'plus-circle-o',
+            'plus-circle',
+            'pause',
+            'pause-circle-o',
+            'pause-circle',
+            'minus',
+            'minus-circle-o',
+            'minus-circle',
+            'plus-square',
+            'minus-square',
+            'info',
+            'info-circle-o',
+            'info-circle',
+            'exclamation',
+            'exclamation-circle-o',
+            'exclamation-circle',
+            'cross',
+            'cross-circle-o',
+            'cross-circle',
+            'check',
+            'check-circle-o',
+            'check-circle',
+            'clock-circle-o',
+            'clock-circle',
+            'clock-circle-check',
+            'forbid-circle-o',
+            'forbid-circle',
+            'stop',
+            'lock',
+            'unlock',
+            'android',
+            'apple',
+            'area-chart',
+            'bar-chart',
+            'bars',
+            'calendar',
+            'cloud',
+            'cloud-download',
+            'code',
+            'copy',
+            'credit-card',
+            'delete',
+            'desktop',
+            'download',
+            'edit',
+            'ellipsis',
+            'file',
+            'file-text',
+            'folder',
+            'folder-open',
+            'hdd',
+            'frown',
+            'meh',
+            'laptop',
+            'appstore-o',
+            'appstore',
+            'line-chart',
+            'link',
+            'logout',
+            'mail',
+            'mail-open',
+            'menu-fold',
+            'menu-unfold',
+            'mobile',
+            'notification',
+            'picture',
+            'pie-chart',
+            'poweroff',
+            'reload',
+            'search',
+            'setting',
+            'share-alt',
+            'shopping-cart',
+            'smile',
+            'tablet',
+            'tag',
+            'tags',
+            'to-top',
+            'upload',
+            'user',
+            'windows',
+            'ie',
+            'chrome',
+            'home',
+            'loading',
+            'tags-o',
+            'tag-o',
+            'cloud-upload-o',
+            'cloud-download-o',
+            'cloud-upload',
+            'cloud-o',
+            'star-o',
+            'star',
+            'heart-o',
+            'heart',
+            'environment',
+            'environment-o',
+            'report-set',
+            'user-set',
+            'camera',
+            'camera-o',
+            'eye',
+            'eye-off',
+            'save',
+            'team',
+            'solution',
+            'phone',
+            'filter',
+            'export',
+            'customerservice',
+            '1-1',
+            'like',
+            'dislike',
+            'message',
+            'calculator',
+            'flow',
+            'commit',
+            'inbox',
+            'inbox-in',
+            'inbox-out',
+            'flask',
+            'dashboard',
+            'atom',
+            'connection',
+            'cubes',
+            'wechat',
+            'chart-arrow',
+            'asterrisk'
+        ];
+        var iconHtml = []
+
+        for (var j = 0; j < iconsDirection.length; j++) {
+            iconHtml.push('<div style="float: left; margin: 8px 4px; width: 20%; text-align: center;"><span><i class="vci vci-' + iconsDirection[j] + '"></i><div>' + iconsDirection[j] + '</div></span></div>');
+        }
+
+        document.querySelector('.doc-icons').innerHTML = iconHtml.join('');
+    })()
+</script>
+
+<h2 id="栅格化"><a href="#栅格化" class="headerlink" title="栅格化"></a>栅格化</h2><p>栅格化布局采用24栏处理，<br>    <code>vc-col-*</code> 代表所占的栅格栏数<br>    <code>vc-offset-*</code> 代表模块左侧占多少栏空白</p>
+<pre><code><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"vc-row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"vc-col-6"</span>&gt;</span>6列<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"vc-col-18"</span>&gt;</span>18列<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</code></pre>
 
     
 

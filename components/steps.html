@@ -91,6 +91,7 @@
 </li>
 <li><a href="../guide/index.html" class="nav-link">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../demo/index.html" class="nav-link">组件demo集合</a></li>
 <li><a href="../components/index.html" class="nav-link current">组件</a></li>
 
     </ul>
@@ -107,6 +108,7 @@
 </li>
 <li><a href="../guide/index.html" class="nav-link">说明</a></li>
 <li><a href="../scaffold/index.html" class="nav-link">脚手架</a></li>
+<li><a href="../demo/index.html" class="nav-link">组件demo集合</a></li>
 <li><a href="../components/index.html" class="nav-link current">组件</a></li>
 
     </ul>
@@ -278,7 +280,14 @@
 <li><p><strong>· 可选值：</strong> <code>normal | small</code></p>
 </li>
 </ul>
-<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span> <span class="attr">:size</span>=<span class="string">"'small'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span> <span class="attr">:is-vertical</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>isTextUp</code> 是否将解释文字显示在步进条的上方</p>
+<ul>
+<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
+</li>
+<li><p><strong>· 默认值：</strong> <code>false</code></p>
+</li>
+</ul>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span> <span class="attr">:size</span>=<span class="string">"'small'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span> <span class="attr">:is-vertical</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-steps</span> <span class="attr">:data</span>=<span class="string">"stepsData"</span> <span class="attr">:is-text-up</span>=<span class="string">"true"</span> <span class="attr">:is-vertical</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-steps</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">stepsData: [&#123;</div><div class="line">    order: <span class="number">1</span>,</div><div class="line">    title: <span class="string">'完成'</span>,</div><div class="line">    explain: <span class="string">'说明文字'</span>,</div><div class="line">    isFinished: <span class="literal">true</span></div><div class="line">&#125;, &#123;</div><div class="line">    order: <span class="number">2</span>,</div><div class="line">    title: <span class="string">'进行中'</span>,</div><div class="line">    explain: <span class="string">'说明文字'</span>,</div><div class="line">    isActive: <span class="literal">true</span></div><div class="line">&#125;, &#123;</div><div class="line">    order: <span class="number">3</span>,</div><div class="line">    title: <span class="string">'默认尺寸'</span>,</div><div class="line">    explain: <span class="string">'说明文字'</span></div><div class="line">&#125;]</div></pre></td></tr></table></figure>
 <div><br><v-steps :append-class="'one-and-half-width ml-100'" :data="stepsData"></v-steps><br><v-steps :append-class="'one-and-half-width ml-100'" :data="stepsData" :size="'small'"></v-steps><br><v-steps :data="stepsData" :is-vertical="true"></v-steps><br></div>
 
