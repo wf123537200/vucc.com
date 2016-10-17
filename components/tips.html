@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,17 +251,20 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>tips弹窗</h1>
     <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/tips’;</name></p>
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>tips组件提供了两种实例化方式,<br>1,可以采用常规的方法对tips进行声明,如:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tips</span> <span class="attr">:id</span>=<span class="string">"myTips"</span> <span class="attr">:content</span>=<span class="string">"'我是一个提示操作/类型是info'"</span> <span class="attr">type</span>=<span class="string">"info"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-tips</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>2,为了方便代码中使用,tips类的弹出窗口还提供了另一种纯js的实例化机制<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">window</span>.Tips.init(type, content, [id, showTime, appendClass, appendStyle]);</div></pre></td></tr></table></figure></p>
+<p>2,为了方便代码中使用,tips类的弹出窗口还提供了另一种纯js的实例化机制<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">window</span>.Tips.init(id, type, content, showTime, appendClass, appendStyle);</div></pre></td></tr></table></figure></p>
 <p>当tips弹窗被实例化时,将会将当前tips弹窗的vue对象引用绑定到 <code>vm.$root.$$tips</code> 上,以方便在任何vue对象内部对tips进行调用</p>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>id</code> 必填,用于指代整个tips实例,后续调用时通过此id调用组件实例</p>
 <ul>
@@ -289,7 +296,6 @@
 <p><v-tips :id="'infoTips1'" :content="'我是一个提示操作/类型是info'" type="info"></v-tips><v-tips :id="'infoTips2'" :content="'我是一个提示操作/类型是success'" type="success"></v-tips><v-tips :id="'infoTips3'" :content="'我是一个提示操作/类型是error'" type="error"></v-tips><v-tips :id="'infoTips4'" :content="'我是一个提示操作/类型是warn'" type="warn"></v-tips></p>
 <p><v-button type="primary" @click="showTips('infoTips1', 'info')">tips info</v-button>      <v-button type="primary" @click="showTips('infoTips2', 'success')">tips success</v-button>    <v-button type="primary" @click="showTips('infoTips3', 'error')">tips error</v-button>  <v-button type="primary" @click="showTips('infoTips4', 'warn')">tips warn</v-button></p>
 <p>第二种调用方法,不需要html声明<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">showTipsWay2() &#123;</div><div class="line">    <span class="built_in">window</span>.Tips.init(<span class="string">''</span>, <span class="string">'info'</span>, <span class="string">'lalalala'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><v-button @click="showTipsWay2()">tips info 第二种调用方法</v-button></p>
 
 
     
@@ -311,16 +317,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

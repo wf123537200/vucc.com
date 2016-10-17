@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>按钮</h1>
     <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/button’;</name></p>
 <h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p><code>type</code> 按钮组件的类型</p>
@@ -264,12 +271,6 @@
 </li>
 <li><p><strong>· 可选值：</strong> <code>primary|outline|error|link</code></p>
 </li>
-<li><p><strong>· 用法：</strong></p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"outline"</span>&gt;</span>outline<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"buttonClick()"</span>&gt;</span>primary/large<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><strong>· 示例：</strong><br><v-button>default</v-button>   <v-button type="primary" @click="buttonClick()">primary</v-button>    <v-button type="outline">outline</v-button>    <v-button type="error">error</v-button>  <v-button type="link">link</v-button></li>
 </ul>
 <p><code>size</code> 按钮组件的大小</p>
 <ul>
@@ -279,12 +280,6 @@
 </li>
 <li><p><strong>· 可选值：</strong> <code>normal|large|small</code></p>
 </li>
-<li><p><strong>· 用法：</strong></p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">size</span>=<span class="string">"large"</span>&gt;</span>large<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><strong>· 示例：</strong><br><v-button type="primary" size="large">large</v-button> <v-button type="primary" size="normal">large</v-button> <v-button type="primary" size="small">large</v-button></li>
 </ul>
 <p><code>isDisabled</code> 按钮是否可以点击</p>
 <ul>
@@ -292,21 +287,8 @@
 </li>
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
-<li><p><strong>· 用法：</strong></p>
-</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> <span class="attr">:is-disabled</span>=<span class="string">"true"</span>&gt;</span>disabled<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><strong>· 示例：</strong><br><v-button type="primary" :is-disabled="true">disabled</v-button></li>
-</ul>
-<h2 id="带图标button"><a href="#带图标button" class="headerlink" title="带图标button"></a>带图标button</h2><ul>
-<li><strong>· 用法：</strong></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 后图标 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>default<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"vci vci-down"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 前图标 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"vci vci-down"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>default<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><strong>· 示例：</strong><br><v-button><span>default</span><span class="vci vci-down"></span></v-button><v-button><span class="vci vci-down"></span><span>default</span></v-button></li>
-</ul>
-
+<h2 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span>&gt;</span>default<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> <span class="attr">size</span>=<span class="string">"large"</span> @<span class="attr">click</span>=<span class="string">"buttonClick()"</span>&gt;</span>primary/large<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"outline"</span>&gt;</span>outline<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"error"</span>&gt;</span>error<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"link"</span> <span class="attr">size</span>=<span class="string">"small"</span> &gt;</span>link/small<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> <span class="attr">:is-disabled</span>=<span class="string">"true"</span> @<span class="attr">click</span>=<span class="string">"buttonClick()"</span>&gt;</span>primary/disable<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 带图标 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>带图标button:<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>default<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"vci vci-down"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"vci vci-down"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>default<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
 
     
 
@@ -327,16 +309,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>滑动条</h1>
     <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/slider’;</name></p>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>max</code> 拖拽的最大值</p>
@@ -299,11 +306,6 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">valueList: [&#123;</div><div class="line">               label: <span class="string">'0ms'</span>,</div><div class="line">               value: <span class="number">0</span></div><div class="line">           &#125;, &#123;</div><div class="line">               label: <span class="string">'25ms'</span>,</div><div class="line">               value: <span class="number">25</span></div><div class="line">           &#125;]</div></pre></td></tr></table></figure>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> sliderValue = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> sliderValue2 = <span class="number">50</span>;</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-slider</span> <span class="attr">min</span>=<span class="string">"100"</span> <span class="attr">max</span>=<span class="string">"1000"</span> <span class="attr">:value.sync</span>=<span class="string">"sliderValue"</span> <span class="attr">:text</span>=<span class="string">"'px'"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-slider</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-slider</span> <span class="attr">:value.sync</span>=<span class="string">"sliderValue2"</span> <span class="attr">:text</span>=<span class="string">"'px'"</span> <span class="attr">:value-list</span>=<span class="string">"sliderValueList"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-slider</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><v-slider min="100" max="1000" :value.sync="sliderValue" :text="'px'"></v-slider></p>
-<input type="text" style="margin-top:20px;" v-model="sliderValue">
-
-<p><v-slider :value.sync="sliderValue2" :text="'px'" :value-list="sliderValueList"></v-slider></p>
-<input type="text" style="margin-top:20px;" v-model="sliderValue2">
 
     
 
@@ -324,16 +326,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>标签类型的下拉列表</h1>
     <p class="tip">本组件目前只支持userId,userName为key的情况,后续会做重构</p>
 
@@ -290,7 +297,6 @@
 </ul>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  data : [</div><div class="line">    &#123;userId:<span class="number">1</span>, userName: <span class="string">'hill'</span>&#125;,</div><div class="line">    &#123;userId:<span class="number">2</span>, userName: <span class="string">'shijia'</span>&#125;,</div><div class="line">    &#123;userId:<span class="number">3</span>, userName: <span class="string">'zac'</span>&#125;,</div><div class="line">    &#123;userId:<span class="number">4</span>, userName: <span class="string">'admin'</span>&#125;</div><div class="line">  ],</div><div class="line">  selected : [&#123;</div><div class="line">    userId : <span class="number">1</span>,</div><div class="line">    userName : <span class="string">'hill'</span></div><div class="line">  &#125;,&#123;</div><div class="line">    userId : <span class="number">2</span>,</div><div class="line">    userName : <span class="string">'shijia'</span></div><div class="line">  &#125;],</div><div class="line">  disabled : [&#123;</div><div class="line">    userId : <span class="number">100</span>,</div><div class="line">    userName : <span class="string">'admin'</span></div><div class="line">  &#125;]</div><div class="line">&#125;<span class="string">``</span></div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-label-dropdown</span> <span class="attr">:data</span>=<span class="string">"data"</span></span></div><div class="line">                  <span class="attr">:selected.sync</span>=<span class="string">"selected"</span></div><div class="line">                  <span class="attr">:disabled</span>=<span class="string">"disabled"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">v-label-dropdown</span>&gt;</span></div></pre></td></tr></table></figure>
-<div><br><v-label-dropdown :data="staff.data" :selected.sync="staff.selected" :disabled="staff.disabled"></v-label-dropdown><br></div>
 
 
     
@@ -308,16 +314,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

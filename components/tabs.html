@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>标签页</h1>
     <h3 id="子组件-pane"><a href="#子组件-pane" class="headerlink" title="子组件 pane"></a>子组件 pane</h3><p class="tip">vPane组件只在vTabs组件中使用,再别处使用将只产生一个section标签来包装代码</p>
 
@@ -291,7 +298,7 @@
 <div><br><v-tabs type="card" :active-index="activeIndex"><div slot="header"><div class="a">选项卡1</div><div>选项卡2</div><div>选项卡3</div></div><v-pane>选项卡111111内容</v-pane><v-pane>选项卡222222内容</v-pane><v-pane>选项卡33333内容</v-pane></v-tabs></div>
 
 <p>小尺寸选项卡:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">"panel"</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">:active-index</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡111111内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡222222内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡33333内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<div><br><v-tabs type="panel" size="small" :active-index="1"><div slot="header"><div class="a">选项卡1</div><div>选项卡2</div><div>选项卡3</div></div><v-pane>选项卡111111内容</v-pane><v-pane>选项卡222222内容</v-pane><v-pane>选项卡33333内容</v-pane></v-tabs><br></div>
+
 
     
 
@@ -312,16 +319,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

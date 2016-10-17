@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>选择框</h1>
     <p>下拉选择框内部直接调用了下拉列表组件,也可以直接参考<a href="/api/#下拉列表">下拉列表</a></p>
 <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/select’;</name></p>
@@ -300,23 +307,12 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
-<p><code>isDisabled</code> 开关是否禁用</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code>false</code></p>
-</li>
-</ul>
 <p><code>filter</code> 下拉列表选项过滤器,传入<code>Function</code>时,会自动传入<code>data.optsList</code>作为参数,方便过滤,当传入<code>Number | String</code>时,会自动对<code>data.optsList</code>做模糊过滤,</p>
 <ul>
 <li><strong>· 类型：</strong> <code>Number | String | Function</code></li>
 </ul>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// dropdown</span></div><div class="line">dropDownData: &#123;</div><div class="line">  optsList: [&#123;</div><div class="line">    value: <span class="number">0</span>,</div><div class="line">    <span class="comment">// 可以不传,默认以value代替label</span></div><div class="line">    label: <span class="string">'value0'</span></div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">1</span>,</div><div class="line">    label: <span class="string">'value1'</span>,</div><div class="line">    <span class="comment">// 如果需要特性渲染页面</span></div><div class="line">    renderLi: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="keyword">return</span> <span class="string">`&lt;a&gt;111&lt;/a&gt;`</span></div><div class="line">    &#125;</div><div class="line">  &#125;, &#123;</div><div class="line">    value: <span class="number">2</span>,</div><div class="line">    label: <span class="string">'value2'</span>,</div><div class="line">    isDisabled: <span class="literal">true</span> <span class="comment">// options disable</span></div><div class="line">  &#125;]</div><div class="line">&#125;,</div><div class="line"></div><div class="line">dropDownValue: <span class="number">0</span></div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> <span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData"</span> <span class="attr">:is-disabled</span>=<span class="string">"true"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span> <span class="attr">:as-label</span>=<span class="string">"'desc'"</span><span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>select: <span v-text="dropDownValue"></span></p>
-<p><v-select :data="dropDownData" :append-style="{width: '200px'}" :value.sync="dropDownValue"></v-select><v-select :data="dropDownData" :is-disabled="true" :value.sync="dropDownValue"></v-select></p>
-<p><v-select :data="dropDownData2" :as-value="'name'" :as-label="'desc'" :append-style="{width: '200px'}" :value.sync="dropDownValue"></v-select></p>
-
 
     
 
@@ -326,7 +322,7 @@
           <span>← <a href="../components/radio.html">单选框</a></span>
         
         
-          <span style="float:right"><a href="../components/multi-select.html">多项选择框</a> →</span>
+          <span style="float:right"><a href="../components/multi-select.html">下拉多选框</a> →</span>
         
       </div>
     
@@ -337,16 +333,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

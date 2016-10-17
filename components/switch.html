@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>开关</h1>
     <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/switch’;</name></p>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>size</code> 组件的大小</p>
@@ -264,23 +271,16 @@
 </li>
 <li><p><strong>· 可选值：</strong> <code>normal|large|small</code></p>
 </li>
-<li><p><strong>· 用法：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-switch</span> <span class="attr">size</span>=<span class="string">"normal"</span> <span class="attr">:onChange</span>=<span class="string">"switchChange"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-switch</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-switch</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">:onChange</span>=<span class="string">"switchChange"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-switch</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>· 示例：</strong><br><v-switch size="normal" :onchange="switchChange"></v-switch><v-switch size="small" :onchange="switchChange"></v-switch></p>
-</li>
 </ul>
 <p><code>value</code> 开关的值</p>
 <ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 用法：</strong></p>
-</li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-switch</span> <span class="attr">:value.sync</span>=<span class="string">"switchValue"</span> <span class="attr">:onChange</span>=<span class="string">"switchChange"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-switch</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>text</code> 开关内部需要展示的文字,样式需要自己添加</p>
 <ul>
-<li><strong>· 示例：</strong><br><v-switch :value.sync="switchValue" :onchange="switchChange"></v-switch> value: <span v-text="switchValue"></span></li>
+<li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
+<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-switch</span> <span class="attr">:value.sync</span>=<span class="string">"switchValue"</span> <span class="attr">:onChange</span>=<span class="string">"switchChange"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-switch</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-switch</span> <span class="attr">:value.sync</span>=<span class="string">"switchValue"</span> <span class="attr">:is-disabled</span>=<span class="string">"true"</span> <span class="attr">:onChange</span>=<span class="string">"switchChange"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-switch</span>&gt;</span></div></pre></td></tr></table></figure>
 
 
     
@@ -302,16 +302,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

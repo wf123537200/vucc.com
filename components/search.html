@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link current">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>搜索框</h1>
     <h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>input组件</p>
 <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/search’;</name></p>
@@ -280,9 +287,6 @@
 </ul>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-search</span> <span class="attr">:value.sync</span>=<span class="string">"search"</span> @<span class="attr">click.stop</span>=<span class="string">"buttonClick"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-search</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<p><v-search :value.sync="search" @click.stop="buttonClick"></v-search></p>
-
-
     
 
     
@@ -290,6 +294,8 @@
         
           <span>← <a href="../components/from.html">表单</a></span>
         
+        
+          <span style="float:right"><a href="../components/datepicker.html">日期选择组件</a> →</span>
         
       </div>
     
@@ -300,16 +306,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>

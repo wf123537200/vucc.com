@@ -144,7 +144,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">多项选择框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
                 </li>
             
                 <li>
@@ -181,6 +181,10 @@
             
                 <li>
                     <a href="../components/table.html" class="sidebar-link">表格</a>
+                </li>
+            
+                <li>
+                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
                 </li>
             
                 <li>
@@ -247,13 +251,16 @@
                     <a href="../components/search.html" class="sidebar-link">搜索框</a>
                 </li>
             
+                <li>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                </li>
+            
         </ul>
     </div>
 </div>
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    
     <h1>按钮组</h1>
     <h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>button组件</p>
 <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/button-group’;</name></p>
@@ -276,7 +283,6 @@
 </ul>
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// button group</span></div><div class="line">buttonGroupList: [&#123;</div><div class="line">  text: <span class="string">'btn1'</span>,</div><div class="line">  icon: <span class="string">'android'</span>,</div><div class="line">  onClick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'btn1'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;, &#123;</div><div class="line">  text: <span class="string">'btn2'</span>,</div><div class="line">  icon: <span class="string">'apple'</span>,</div><div class="line">  isSelected: <span class="literal">true</span>,</div><div class="line">  onClick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'btn2'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;, &#123;</div><div class="line">  text: <span class="string">'btn3'</span>,</div><div class="line">  icon: <span class="string">'android'</span>,</div><div class="line">  onClick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'btn3'</span>)</div><div class="line">  &#125;,</div><div class="line">  isDisabled: <span class="literal">true</span></div><div class="line">&#125;]</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button-group</span> <span class="attr">:data</span>=<span class="string">"buttonGroupList"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-button-group</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><v-button-group :data="buttonGroupList"></v-button-group></p>
 
 
     
@@ -298,16 +304,12 @@
             <script src="../js/docsearch.js"></script>
             <script src="../js/smooth-scroll.min.js"></script>
             <script src="../js/common.js"></script>
-            <script src="../js/app.js"></script>
             <script src="../js/fastclick.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     FastClick.attach(document.body);
                 }, false);
             </script>
-
-            <!-- add by zakwu -->
-            <script src="../js/vue-demo.js"></script>
 
         
         <script>
