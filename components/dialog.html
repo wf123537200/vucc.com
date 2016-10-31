@@ -252,7 +252,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/datepicker.html" class="sidebar-link">日期选择组件</a>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择</a>
                 </li>
             
         </ul>
@@ -333,6 +333,8 @@
 <li><p><strong>· 默认值：</strong> <code>false</code></p>
 </li>
 </ul>
+<h3 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h3><p class="tip"><br>    为了应对一些特殊需求,给dialog的展示体增加了 d-body样式,可以通过 <code>querySelector(&#39;#id .d-body&#39;)</code><br>    找到dialog的body以后,可以做一些特殊的操作,如控制滚动条之类的<br></p>
+
 <h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-dialog</span> <span class="attr">:id</span>=<span class="string">"'dialog1'"</span> <span class="attr">:on-ok</span>=<span class="string">"dialogCallbackFn1"</span> <span class="attr">:on-cancel</span>=<span class="string">"dialogCallbackFn2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>hi, 我是一个弹窗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>hi, 我是一个弹窗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>hi, 我是一个弹窗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>hi, 我是一个弹窗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-dialog</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 展示方法</span></div><div class="line">vm.$root.$$dialog[id].show();</div></pre></td></tr></table></figure>
 
