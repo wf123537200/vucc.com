@@ -36,7 +36,7 @@
             h3.vc-dialog-title:before, .vc-progress-title h3:before, .vc-step h3:before, .vc-transfer h3:before {
                 content: ''!important;
             }
-            .vc-alert h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
+            .vc-alert h3, .vc-dialog h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
                 margin: 0!important;
             }
 
@@ -71,15 +71,40 @@
             <link rel="stylesheet" href="../css/page.css">
         
         <link rel="stylesheet" href="../css/css/style.css">
+        <link rel="stylesheet" href="../css/css/table.css">
         
+
+        <style>
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+
+            .rcode {
+                position: relative;
+                background: #efefef;
+                margin-top: 30px;
+            }
+            .rcode .showcode {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #57cc95;
+                cursor: pointer;
+            }
+        </style>
     </head>
-    <body id="app" style="background: #ffffff;">
-        <div id="mobile-bar">
-            <a class="menu-button"></a>
-            <a class="logo" href="/"></a>
-        </div>
-        
-            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <body style="background: #ffffff;">
+        <section id="app">
+            <div id="mobile-bar">
+                <a class="menu-button"></a>
+                <a class="logo" href="/"></a>
+            </div>
+            
+                <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
     </a>
@@ -97,9 +122,9 @@
     </ul>
 </div>
 
-            <div id="main">
-                
+                <div id="main">
                     
+                        
     <div class="sidebar">
     <ul class="main-menu">
         <li>
@@ -121,7 +146,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/button.html" class="sidebar-link">按钮</a>
+                    <a href="../components/button.html" class="sidebar-link">按钮(vButton)</a>
                 </li>
             
                 <li>
@@ -129,131 +154,123 @@
                 </li>
             
                 <li>
-                    <a href="../components/switch.html" class="sidebar-link">开关</a>
+                    <a href="../components/switch.html" class="sidebar-link">开关(vSwitch)</a>
                 </li>
             
                 <li>
-                    <a href="../components/checkbox.html" class="sidebar-link">复选框</a>
+                    <a href="../components/checkbox.html" class="sidebar-link">复选框(vButtonGroup)</a>
                 </li>
             
                 <li>
-                    <a href="../components/radio.html" class="sidebar-link">单选框</a>
+                    <a href="../components/radio.html" class="sidebar-link">单选框(vRadio)</a>
                 </li>
             
                 <li>
-                    <a href="../components/select.html" class="sidebar-link">选择框</a>
+                    <a href="../components/select.html" class="sidebar-link">选择框(vSelect)</a>
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框(vMultiSelect)</a>
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(vDropdown)</a>
                 </li>
             
                 <li>
-                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表</a>
+                    <a href="../components/tips.html" class="sidebar-link">tips弹窗(vTips)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tips.html" class="sidebar-link">tips弹窗</a>
+                    <a href="../components/messagebox.html" class="sidebar-link">messageBox弹窗(vMessageBox)</a>
                 </li>
             
                 <li>
-                    <a href="../components/messagebox.html" class="sidebar-link">messageBox类弹窗</a>
+                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗(vAlert)</a>
                 </li>
             
                 <li>
-                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗</a>
+                    <a href="../components/dialog.html" class="sidebar-link">dialog类弹窗(vDialog)</a>
                 </li>
             
                 <li>
-                    <a href="../components/dialog.html" class="sidebar-link">dialog类模态弹窗</a>
+                    <a href="../components/tabs.html" class="sidebar-link">标签页(vTabs)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tabs.html" class="sidebar-link">标签页</a>
+                    <a href="../components/slider.html" class="sidebar-link">滑动条(vSlider)</a>
                 </li>
             
                 <li>
-                    <a href="../components/slider.html" class="sidebar-link">滑动条</a>
+                    <a href="../components/table.html" class="sidebar-link">表格(vTable)</a>
                 </li>
             
                 <li>
-                    <a href="../components/table.html" class="sidebar-link">表格</a>
+                    <a href="../components/pagination.html" class="sidebar-link">分页(vPagination)</a>
                 </li>
             
                 <li>
-                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
+                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域(vInput & vTextarea)</a>
                 </li>
             
                 <li>
-                    <a href="../components/edit-table.html" class="sidebar-link">可插入的表格组件</a>
+                    <a href="../components/step-input.html" class="sidebar-link">步进输入框(vStepInput)</a>
                 </li>
             
                 <li>
-                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域</a>
+                    <a href="../components/badge.html" class="sidebar-link">徽标数(vBadge)</a>
                 </li>
             
                 <li>
-                    <a href="../components/step-input.html" class="sidebar-link">步进输入框</a>
+                    <a href="../components/collapse.html" class="sidebar-link">折叠面板(vCollapse)</a>
                 </li>
             
                 <li>
-                    <a href="../components/badge.html" class="sidebar-link">徽标数</a>
+                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组(vCollapseGroup)</a>
                 </li>
             
                 <li>
-                    <a href="../components/collapse.html" class="sidebar-link">折叠面板</a>
+                    <a href="../components/progress.html" class="sidebar-link">进度条(vProgress)</a>
                 </li>
             
                 <li>
-                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组</a>
+                    <a href="../components/loading.html" class="sidebar-link">加载(vLoading)</a>
                 </li>
             
                 <li>
-                    <a href="../components/progress.html" class="sidebar-link">进度条</a>
+                    <a href="../components/steps.html" class="sidebar-link">步骤条(vSteps)</a>
                 </li>
             
                 <li>
-                    <a href="../components/loading.html" class="sidebar-link">加载</a>
+                    <a href="../components/tag-list.html" class="sidebar-link">标签列表(vTagList)</a>
                 </li>
             
                 <li>
-                    <a href="../components/steps.html" class="sidebar-link">步骤条</a>
+                    <a href="../components/time-line.html" class="sidebar-link">时间轴(vTimeLine)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tag-list.html" class="sidebar-link">标签列表</a>
+                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示(vToolTip)</a>
                 </li>
             
                 <li>
-                    <a href="../components/time-line.html" class="sidebar-link">时间轴</a>
+                    <a href="../components/transfer.html" class="sidebar-link">穿梭框(vTransfer)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示</a>
+                    <a href="../components/tree.html" class="sidebar-link">树状组件(vTree)</a>
                 </li>
             
                 <li>
-                    <a href="../components/transfer.html" class="sidebar-link">穿梭框</a>
+                    <a href="../components/from.html" class="sidebar-link">表单(vFrom)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tree.html" class="sidebar-link">树状组件</a>
+                    <a href="../components/search.html" class="sidebar-link">搜索框(vSearch)</a>
                 </li>
             
                 <li>
-                    <a href="../components/from.html" class="sidebar-link">表单</a>
-                </li>
-            
-                <li>
-                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
-                </li>
-            
-                <li>
-                    <a href="../components/datepicker.html" class="sidebar-link">日期选择</a>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择(vDatepicker)</a>
                 </li>
             
         </ul>
@@ -264,7 +281,7 @@
 <div class="content components with-sidebar" style="list-style: initial;">
     <h1>全局参数说明</h1>
     <p>这里说明所有组件都包含的全局参数,以及传入方法</p>
-<h3 id="appendClass"><a href="#appendClass" class="headerlink" title="appendClass"></a>appendClass</h3><p><code>appendClass</code> 提供了给组件附加自定义class的能力</p>
+<h2 id="appendClass"><a href="#appendClass" class="headerlink" title="appendClass"></a>appendClass</h2><p><code>appendClass</code> 提供了给组件附加自定义class的能力</p>
 <ul>
 <li><p><strong>· 类型：</strong> <code>String</code></p>
 </li>
@@ -274,7 +291,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">:append-class</span>=<span class="string">"'class'"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="appendStyle"><a href="#appendStyle" class="headerlink" title="appendStyle"></a>appendStyle</h3><p><code>appendStyle</code> 提供了给组件附加自定义style的能力</p>
+<h2 id="appendStyle"><a href="#appendStyle" class="headerlink" title="appendStyle"></a>appendStyle</h2><p><code>appendStyle</code> 提供了给组件附加自定义style的能力</p>
 <ul>
 <li><p><strong>· 类型：</strong> <code>Object</code></p>
 </li>
@@ -285,22 +302,12 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-button</span> <span class="attr">:append-style</span>=<span class="string">"styleObject"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(&#123;</div><div class="line">data: &#123;</div><div class="line">    styleObject: &#123;</div><div class="line">        width: <span class="string">'200px'</span>,</div><div class="line">        background: <span class="string">'red'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="asValue-asLabel"><a href="#asValue-asLabel" class="headerlink" title="asValue / asLabel"></a>asValue / asLabel</h3><p><code>asValue</code> 由于有些数据输入不规则,可能不是采用<code>value</code>作为key,所以这里可以传入一个字符串,指定用于渲染数据的key<br><code>asLabel</code> 由于有些数据输入不规则,可能不是采用<code>label</code>作为key,所以这里可以传入一个字符串,指定用于渲染数据的key</p>
+<h2 id="asValue-asLabel"><a href="#asValue-asLabel" class="headerlink" title="asValue / asLabel"></a>asValue / asLabel</h2><p><code>asValue</code> 由于有些数据输入不规则,可能不是采用<code>value</code>作为key,所以这里可以传入一个字符串,指定用于渲染数据的key<br><code>asLabel</code> 由于有些数据输入不规则,可能不是采用<code>label</code>作为key,所以这里可以传入一个字符串,指定用于渲染数据的key</p>
 <p>支持组件radio, checkbox select</p>
 <ul>
 <li><strong>· 类型：</strong> <code>String</code></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-radio</span> <span class="attr">:data</span>=<span class="string">"commonListData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span> <span class="attr">:value.sync</span>=<span class="string">"radioValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-radio</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-select</span> <span class="attr">:data</span>=<span class="string">"dropDownData2"</span> <span class="attr">:as-value</span>=<span class="string">"'name'"</span></span></div><div class="line">    <span class="attr">:as-label</span>=<span class="string">"'desc'"</span><span class="attr">:append-style</span>=<span class="string">"&#123;width: '200px'&#125;"</span> <span class="attr">:value.sync</span>=<span class="string">"dropDownValue"</span>&gt;<span class="tag">&lt;/<span class="name">v-select</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h3><p>1.1.0 release<br>    去掉分模块打包,增加scss-loader, vue模块直接生成代码</p>
-<p>1.2.0 release<br>    整体打包方式变化,提供两种暴露模式<br>        整体包: 包含样式等,存放在dist/index.js下<br>        分散包: 样式和代码分离,分别存放于dist/split.js, dist/style.css</p>
-<p>1.2.1 release<br>    增加tree组件的节点点击函数<br>    增加table的勾选框触发后回调函数</p>
-<p>1.2.2<br>    多选框大小写不敏感<br>    switch组件增加is-disabled属性</p>
-<p>1.2.3<br>    dialog增加isMultiple字段,用于控制是否可以同时显示多个dialog</p>
-<p>1.2.6<br>    精简package.json文件,去掉不需要的库</p>
-<p>1.4.0<br>    单文件引用完成</p>
-<p>1.4.1<br>    step增加 is-text-up属性, close issus #1<br>—————–以上文档已经更新——————–<br>1.4.4<br>    增加datepicker选择器<br>    step-input组件增加 onUp/onDown onChange isOnlyClick属性<br>    messagebox增加isUseHtml属性</p>
-<p>1.4.47<br>    datepicker 增加onOk,onCancel回调<br>    tag-list增加onAdd,onDelete回调 placeholder属性</p>
-
 
     
 
@@ -308,24 +315,29 @@
       <div class="guide-links">
         
         
-          <span style="float:right"><a href="../components/button.html">按钮</a> →</span>
+          <span style="float:right"><a href="../components/button.html">按钮(vButton)</a> →</span>
         
       </div>
     
 </div>
 
-                
-            </div>
-            <script src="../js/docsearch.js"></script>
-            <script src="../js/smooth-scroll.min.js"></script>
-            <script src="../js/common.js"></script>
-            <script src="../js/fastclick.min.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    FastClick.attach(document.body);
-                }, false);
-            </script>
+                    
+                </div>
+                <script src="../js/docsearch.js"></script>
+                <script src="../js/smooth-scroll.min.js"></script>
+                <script src="../js/common.js"></script>
+                <script src="../js/fastclick.min.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        FastClick.attach(document.body);
+                    }, false);
+                </script>
 
-        
+            
+            
+                <script src="../js/demo.js"></script>
+                <script src="../js/vue-demo.js"></script>
+            
+        </section>
     </body>
 </html>

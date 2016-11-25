@@ -36,7 +36,7 @@
             h3.vc-dialog-title:before, .vc-progress-title h3:before, .vc-step h3:before, .vc-transfer h3:before {
                 content: ''!important;
             }
-            .vc-alert h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
+            .vc-alert h3, .vc-dialog h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
                 margin: 0!important;
             }
 
@@ -71,15 +71,40 @@
             <link rel="stylesheet" href="../css/page.css">
         
         <link rel="stylesheet" href="../css/css/style.css">
+        <link rel="stylesheet" href="../css/css/table.css">
         
+
+        <style>
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+
+            .rcode {
+                position: relative;
+                background: #efefef;
+                margin-top: 30px;
+            }
+            .rcode .showcode {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #57cc95;
+                cursor: pointer;
+            }
+        </style>
     </head>
-    <body id="app" style="background: #ffffff;">
-        <div id="mobile-bar">
-            <a class="menu-button"></a>
-            <a class="logo" href="/"></a>
-        </div>
-        
-            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <body style="background: #ffffff;">
+        <section id="app">
+            <div id="mobile-bar">
+                <a class="menu-button"></a>
+                <a class="logo" href="/"></a>
+            </div>
+            
+                <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
     </a>
@@ -97,9 +122,9 @@
     </ul>
 </div>
 
-            <div id="main">
-                
+                <div id="main">
                     
+                        
     <div class="sidebar">
     <ul class="main-menu">
         <li>
@@ -419,18 +444,20 @@ v-bind:class 简写为 :class
     
 </div>
 
-                
-            </div>
-            <script src="../js/docsearch.js"></script>
-            <script src="../js/smooth-scroll.min.js"></script>
-            <script src="../js/common.js"></script>
-            <script src="../js/fastclick.min.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    FastClick.attach(document.body);
-                }, false);
-            </script>
+                    
+                </div>
+                <script src="../js/docsearch.js"></script>
+                <script src="../js/smooth-scroll.min.js"></script>
+                <script src="../js/common.js"></script>
+                <script src="../js/fastclick.min.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        FastClick.attach(document.body);
+                    }, false);
+                </script>
 
-        
+            
+            
+        </section>
     </body>
 </html>

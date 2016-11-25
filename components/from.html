@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>表单 - vucc</title>
+        <title>表单(vFrom) - vucc</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -36,7 +36,7 @@
             h3.vc-dialog-title:before, .vc-progress-title h3:before, .vc-step h3:before, .vc-transfer h3:before {
                 content: ''!important;
             }
-            .vc-alert h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
+            .vc-alert h3, .vc-dialog h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
                 margin: 0!important;
             }
 
@@ -71,15 +71,40 @@
             <link rel="stylesheet" href="../css/page.css">
         
         <link rel="stylesheet" href="../css/css/style.css">
+        <link rel="stylesheet" href="../css/css/table.css">
         
+
+        <style>
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+
+            .rcode {
+                position: relative;
+                background: #efefef;
+                margin-top: 30px;
+            }
+            .rcode .showcode {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #57cc95;
+                cursor: pointer;
+            }
+        </style>
     </head>
-    <body id="app" style="background: #ffffff;">
-        <div id="mobile-bar">
-            <a class="menu-button"></a>
-            <a class="logo" href="/"></a>
-        </div>
-        
-            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <body style="background: #ffffff;">
+        <section id="app">
+            <div id="mobile-bar">
+                <a class="menu-button"></a>
+                <a class="logo" href="/"></a>
+            </div>
+            
+                <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
     </a>
@@ -97,9 +122,9 @@
     </ul>
 </div>
 
-            <div id="main">
-                
+                <div id="main">
                     
+                        
     <div class="sidebar">
     <ul class="main-menu">
         <li>
@@ -121,7 +146,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/button.html" class="sidebar-link">按钮</a>
+                    <a href="../components/button.html" class="sidebar-link">按钮(vButton)</a>
                 </li>
             
                 <li>
@@ -129,131 +154,123 @@
                 </li>
             
                 <li>
-                    <a href="../components/switch.html" class="sidebar-link">开关</a>
+                    <a href="../components/switch.html" class="sidebar-link">开关(vSwitch)</a>
                 </li>
             
                 <li>
-                    <a href="../components/checkbox.html" class="sidebar-link">复选框</a>
+                    <a href="../components/checkbox.html" class="sidebar-link">复选框(vButtonGroup)</a>
                 </li>
             
                 <li>
-                    <a href="../components/radio.html" class="sidebar-link">单选框</a>
+                    <a href="../components/radio.html" class="sidebar-link">单选框(vRadio)</a>
                 </li>
             
                 <li>
-                    <a href="../components/select.html" class="sidebar-link">选择框</a>
+                    <a href="../components/select.html" class="sidebar-link">选择框(vSelect)</a>
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框(vMultiSelect)</a>
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(vDropdown)</a>
                 </li>
             
                 <li>
-                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表</a>
+                    <a href="../components/tips.html" class="sidebar-link">tips弹窗(vTips)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tips.html" class="sidebar-link">tips弹窗</a>
+                    <a href="../components/messagebox.html" class="sidebar-link">messageBox弹窗(vMessageBox)</a>
                 </li>
             
                 <li>
-                    <a href="../components/messagebox.html" class="sidebar-link">messageBox类弹窗</a>
+                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗(vAlert)</a>
                 </li>
             
                 <li>
-                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗</a>
+                    <a href="../components/dialog.html" class="sidebar-link">dialog类弹窗(vDialog)</a>
                 </li>
             
                 <li>
-                    <a href="../components/dialog.html" class="sidebar-link">dialog类模态弹窗</a>
+                    <a href="../components/tabs.html" class="sidebar-link">标签页(vTabs)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tabs.html" class="sidebar-link">标签页</a>
+                    <a href="../components/slider.html" class="sidebar-link">滑动条(vSlider)</a>
                 </li>
             
                 <li>
-                    <a href="../components/slider.html" class="sidebar-link">滑动条</a>
+                    <a href="../components/table.html" class="sidebar-link">表格(vTable)</a>
                 </li>
             
                 <li>
-                    <a href="../components/table.html" class="sidebar-link">表格</a>
+                    <a href="../components/pagination.html" class="sidebar-link">分页(vPagination)</a>
                 </li>
             
                 <li>
-                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
+                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域(vInput & vTextarea)</a>
                 </li>
             
                 <li>
-                    <a href="../components/edit-table.html" class="sidebar-link">可插入的表格组件</a>
+                    <a href="../components/step-input.html" class="sidebar-link">步进输入框(vStepInput)</a>
                 </li>
             
                 <li>
-                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域</a>
+                    <a href="../components/badge.html" class="sidebar-link">徽标数(vBadge)</a>
                 </li>
             
                 <li>
-                    <a href="../components/step-input.html" class="sidebar-link">步进输入框</a>
+                    <a href="../components/collapse.html" class="sidebar-link">折叠面板(vCollapse)</a>
                 </li>
             
                 <li>
-                    <a href="../components/badge.html" class="sidebar-link">徽标数</a>
+                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组(vCollapseGroup)</a>
                 </li>
             
                 <li>
-                    <a href="../components/collapse.html" class="sidebar-link">折叠面板</a>
+                    <a href="../components/progress.html" class="sidebar-link">进度条(vProgress)</a>
                 </li>
             
                 <li>
-                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组</a>
+                    <a href="../components/loading.html" class="sidebar-link">加载(vLoading)</a>
                 </li>
             
                 <li>
-                    <a href="../components/progress.html" class="sidebar-link">进度条</a>
+                    <a href="../components/steps.html" class="sidebar-link">步骤条(vSteps)</a>
                 </li>
             
                 <li>
-                    <a href="../components/loading.html" class="sidebar-link">加载</a>
+                    <a href="../components/tag-list.html" class="sidebar-link">标签列表(vTagList)</a>
                 </li>
             
                 <li>
-                    <a href="../components/steps.html" class="sidebar-link">步骤条</a>
+                    <a href="../components/time-line.html" class="sidebar-link">时间轴(vTimeLine)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tag-list.html" class="sidebar-link">标签列表</a>
+                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示(vToolTip)</a>
                 </li>
             
                 <li>
-                    <a href="../components/time-line.html" class="sidebar-link">时间轴</a>
+                    <a href="../components/transfer.html" class="sidebar-link">穿梭框(vTransfer)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示</a>
+                    <a href="../components/tree.html" class="sidebar-link">树状组件(vTree)</a>
                 </li>
             
                 <li>
-                    <a href="../components/transfer.html" class="sidebar-link">穿梭框</a>
+                    <a href="../components/from.html" class="sidebar-link current">表单(vFrom)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tree.html" class="sidebar-link">树状组件</a>
+                    <a href="../components/search.html" class="sidebar-link">搜索框(vSearch)</a>
                 </li>
             
                 <li>
-                    <a href="../components/from.html" class="sidebar-link current">表单</a>
-                </li>
-            
-                <li>
-                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
-                </li>
-            
-                <li>
-                    <a href="../components/datepicker.html" class="sidebar-link">日期选择</a>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择(vDatepicker)</a>
                 </li>
             
         </ul>
@@ -262,54 +279,101 @@
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    <h1>表单</h1>
-    <h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/from’;<br>import <name> from ‘vucc/from-item’;</name></name></p>
-<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><h3 id="from-item"><a href="#from-item" class="headerlink" title="from-item"></a>from-item</h3><h3 id="from-item-参数"><a href="#from-item-参数" class="headerlink" title="from-item 参数"></a>from-item 参数</h3><p><code>label</code> 标题</p>
-<ul>
-<li><strong>· 类型：</strong> <code>String</code></li>
-</ul>
-<p><code>labelCol</code> label占grid列数,[0, 24]</p>
-<ul>
-<li><strong>· 类型：</strong> <code>String | Number</code></li>
-</ul>
-<p><code>wrapperCol</code> input占grid列数,[0, 24]</p>
-<ul>
-<li><strong>· 类型：</strong> <code>String | Number</code></li>
-</ul>
-<p><code>isRequire</code> 是否必填,带小红点</p>
-<ul>
-<li><strong>· 类型：</strong> <code>Boolean</code></li>
-</ul>
-<p><code>explainType</code> 是否必填,带小红点</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 可选值：</strong> <code>error | success | warning | feedback</code></p>
-</li>
-</ul>
-<p><code>isExplainShow</code> 是否显示提示文字</p>
-<ul>
-<li><strong>· 类型：</strong> <code>Boolean</code></li>
-</ul>
-<p><code>explainText</code> 提示文字</p>
-<ul>
-<li><strong>· 类型：</strong> <code>String</code></li>
-</ul>
-<h3 id="from-参数"><a href="#from-参数" class="headerlink" title="from 参数"></a>from 参数</h3><p><code>isVertical</code> 是否竖向排列</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code>false</code></p>
-</li>
-</ul>
-<p><code>isValid</code> 表单是否验证完成</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>Boolean</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code>false</code></p>
-</li>
-</ul>
-<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 水平表单 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">:is-explain-show</span>=<span class="string">"true"</span></div><div class="line">          <span class="attr">:explain-text</span>=<span class="string">"'输入正确'"</span></div><div class="line">          <span class="attr">:explain-type</span>=<span class="string">"'success'"</span></div><div class="line">          <span class="attr">label</span>=<span class="string">"账户："</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">placeholder</span>=<span class="string">"请输入账户名"</span> &gt;</span><span class="tag">&lt;/<span class="name">v-input</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">label</span>=<span class="string">"密码："</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-input</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">className</span>=<span class="string">"ant-checkbox-inline"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-checkbox</span> <span class="attr">:data</span>=<span class="string">"[&#123;label: '记住我', value: true&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-checkbox</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"primary"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 垂直表单 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">v-form</span> <span class="attr">:is-vertical</span>=<span class="string">"true"</span> <span class="attr">:is-valid</span>=<span class="string">"false"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">:is-require</span>=<span class="string">"true"</span></div><div class="line">          <span class="attr">:label</span>=<span class="string">"'账户：'"</span></div><div class="line">          <span class="attr">:is-explain-show</span>=<span class="string">"true"</span></div><div class="line">          <span class="attr">:explain-text</span>=<span class="string">"'输入错误'"</span></div><div class="line">          <span class="attr">:explain-type</span>=<span class="string">"'error'"</span></div><div class="line">          <span class="attr">:label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">:wrapper-col</span>=<span class="string">8</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">placeholder</span>=<span class="string">"请输入账户名"</span> &gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">:label</span>=<span class="string">"'密码：'"</span></div><div class="line">          <span class="attr">:is-explain-show</span>=<span class="string">"true"</span></div><div class="line">          <span class="attr">:explain-text</span>=<span class="string">"'输入正确'"</span></div><div class="line">          <span class="attr">:explain-type</span>=<span class="string">"'success'"</span></div><div class="line">          <span class="attr">:label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">:wrapper-col</span>=<span class="string">8</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">:label</span>=<span class="string">"'密码：'"</span></div><div class="line">          <span class="attr">:is-explain-show</span>=<span class="string">"true"</span></div><div class="line">          <span class="attr">:explain-text</span>=<span class="string">"'警告提示'"</span></div><div class="line">          <span class="attr">:explain-type</span>=<span class="string">"'warning'"</span></div><div class="line">          <span class="attr">:label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">:wrapper-col</span>=<span class="string">8</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">:label</span>=<span class="string">"'密码：'"</span></div><div class="line">          <span class="attr">:is-explain-show</span>=<span class="string">"true"</span></div><div class="line">          <span class="attr">:explain-text</span>=<span class="string">"'验证中提示'"</span></div><div class="line">          <span class="attr">:explain-type</span>=<span class="string">"'feedback'"</span></div><div class="line">          <span class="attr">:label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">:wrapper-col</span>=<span class="string">8</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">label</span>=<span class="string">"选中："</span></div><div class="line">          <span class="attr">label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">wrapper-col</span>=<span class="string">4</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">className</span>=<span class="string">"ant-checkbox-inline"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-checkbox</span> <span class="attr">:data</span>=<span class="string">"[&#123;label: '记住我', value: true&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-checkbox</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">label</span>=<span class="string">"多选："</span></div><div class="line">          <span class="attr">label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">wrapper-col</span>=<span class="string">4</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">className</span>=<span class="string">"ant-checkbox-inline"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-checkbox</span> <span class="attr">:data</span>=<span class="string">"[&#123;label: '我是A', value: true&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-checkbox</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-checkbox</span> <span class="attr">:data</span>=<span class="string">"[&#123;label: '我是B', value: true&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-checkbox</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-checkbox</span> <span class="attr">:data</span>=<span class="string">"[&#123;label: '我是C', value: true&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-checkbox</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">label</span>=<span class="string">"开关："</span></div><div class="line">          <span class="attr">label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">wrapper-col</span>=<span class="string">4</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">className</span>=<span class="string">"ant-checkbox-inline"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-switch</span>&gt;</span><span class="tag">&lt;/<span class="name">v-switch</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">          <span class="attr">label-col</span>=<span class="string">4</span></div><div class="line">          <span class="attr">wrapper-col</span>=<span class="string">4</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">v-button</span> <span class="attr">:type</span>=<span class="string">"'primary'"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">vButton</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-form</span>&gt;</span></div></pre></td></tr></table></figure>
+    <h1>表单(vFrom)</h1>
+    <h2 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h2><p>import <code>&lt;name&gt;</code> from ‘vucc/from’;<br>import <code>&lt;name&gt;</code> from ‘vucc/from-item’;</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><div class="vcode"><br><v-form><br>    <v-form-item :is-explain-show="true" :explain-text="'输入正确'" :explain-type="'success'" label="账户："><br><br>        <v-input placeholder="请输入账户名"></v-input><br>    </v-form-item><br><br>    <v-form-item label="密码："><br>        <v-input type="password" placeholder="请输入密码"></v-input><br>    </v-form-item><br><br>    <v-form-item><br>        <label><br>            <v-checkbox :data="[{label: '记住我', value: true}]"></v-checkbox><br>        </label><br>    </v-form-item><br><br>    <v-button type="primary">登录</v-button><br></v-form><br></div>
+
+<div class="rcode"><br><span class="showcode">代码 V</span><br><div class="hide"><br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-form</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">            <span class="attr">:is-explain-show</span>=<span class="string">"true"</span></div><div class="line">            <span class="attr">:explain-text</span>=<span class="string">"'输入正确'"</span></div><div class="line">            <span class="attr">:explain-type</span>=<span class="string">"'success'"</span></div><div class="line">            <span class="attr">label</span>=<span class="string">"账户："</span>&gt;</div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">placeholder</span>=<span class="string">"请输入账户名"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-input</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-form-item</span></span></div><div class="line">            <span class="attr">label</span>=<span class="string">"密码："</span>&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">v-input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-input</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-form-item</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">v-checkbox</span> <span class="attr">:data</span>=<span class="string">"[&#123;label: '记住我', value: true&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">v-checkbox</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">v-form-item</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-button</span> <span class="attr">type</span>=<span class="string">"primary"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-form</span>&gt;</span></div></pre></td></tr></table></figure><br><br></div><br></div>
+
+<h2 id="from-item属性"><a href="#from-item属性" class="headerlink" title="from-item属性"></a>from-item属性</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>标题</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>labelCol</td>
+<td>label占grid列数</td>
+<td>String/Number</td>
+<td>[0, 24]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>wrapperCol</td>
+<td>input占grid列数</td>
+<td>String/Number</td>
+<td>[0, 24]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>isRequire</td>
+<td>是否必填,带小红点</td>
+<td>Boolean</td>
+<td>[0, 24]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>explainType</td>
+<td>报错的类型</td>
+<td>error/success/warning/feedback</td>
+<td>-</td>
+<td>‘’</td>
+</tr>
+<tr>
+<td>explainText</td>
+<td>提示文字</td>
+<td>String</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>isExplainShow</td>
+<td>是否显示提示文字</td>
+<td>Boolean</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="from-属性"><a href="#from-属性" class="headerlink" title="from 属性"></a>from 属性</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isVertical</td>
+<td>是否竖向排列</td>
+<td>Boolean</td>
+<td>-</td>
+<td>false</td>
+</tr>
+<tr>
+<td>isValid</td>
+<td>表单是否验证完成</td>
+<td>Boolean</td>
+<td>-</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
 
 
     
@@ -317,27 +381,32 @@
     
       <div class="guide-links">
         
-          <span>← <a href="../components/tree.html">树状组件</a></span>
+          <span>← <a href="../components/tree.html">树状组件(vTree)</a></span>
         
         
-          <span style="float:right"><a href="../components/search.html">搜索框</a> →</span>
+          <span style="float:right"><a href="../components/search.html">搜索框(vSearch)</a> →</span>
         
       </div>
     
 </div>
 
-                
-            </div>
-            <script src="../js/docsearch.js"></script>
-            <script src="../js/smooth-scroll.min.js"></script>
-            <script src="../js/common.js"></script>
-            <script src="../js/fastclick.min.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    FastClick.attach(document.body);
-                }, false);
-            </script>
+                    
+                </div>
+                <script src="../js/docsearch.js"></script>
+                <script src="../js/smooth-scroll.min.js"></script>
+                <script src="../js/common.js"></script>
+                <script src="../js/fastclick.min.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        FastClick.attach(document.body);
+                    }, false);
+                </script>
 
-        
+            
+            
+                <script src="../js/demo.js"></script>
+                <script src="../js/vue-demo.js"></script>
+            
+        </section>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>标签页 - vucc</title>
+        <title>标签页(vTabs) - vucc</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -36,7 +36,7 @@
             h3.vc-dialog-title:before, .vc-progress-title h3:before, .vc-step h3:before, .vc-transfer h3:before {
                 content: ''!important;
             }
-            .vc-alert h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
+            .vc-alert h3, .vc-dialog h3, .vc-collapse-group h3, .vc-collapse h3, .vc-progress-title h3, .vc-step h3, .vc-transfer h3 {
                 margin: 0!important;
             }
 
@@ -71,15 +71,40 @@
             <link rel="stylesheet" href="../css/page.css">
         
         <link rel="stylesheet" href="../css/css/style.css">
+        <link rel="stylesheet" href="../css/css/table.css">
         
+
+        <style>
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+
+            .rcode {
+                position: relative;
+                background: #efefef;
+                margin-top: 30px;
+            }
+            .rcode .showcode {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #57cc95;
+                cursor: pointer;
+            }
+        </style>
     </head>
-    <body id="app" style="background: #ffffff;">
-        <div id="mobile-bar">
-            <a class="menu-button"></a>
-            <a class="logo" href="/"></a>
-        </div>
-        
-            <div id="header" style="background: rgba(66, 185, 131, .8)">
+    <body style="background: #ffffff;">
+        <section id="app">
+            <div id="mobile-bar">
+                <a class="menu-button"></a>
+                <a class="logo" href="/"></a>
+            </div>
+            
+                <div id="header" style="background: rgba(66, 185, 131, .8)">
     <a id="logo" href="/">
         <img src="../images/logo.png">
     </a>
@@ -97,9 +122,9 @@
     </ul>
 </div>
 
-            <div id="main">
-                
+                <div id="main">
                     
+                        
     <div class="sidebar">
     <ul class="main-menu">
         <li>
@@ -121,7 +146,7 @@
                 </li>
             
                 <li>
-                    <a href="../components/button.html" class="sidebar-link">按钮</a>
+                    <a href="../components/button.html" class="sidebar-link">按钮(vButton)</a>
                 </li>
             
                 <li>
@@ -129,131 +154,123 @@
                 </li>
             
                 <li>
-                    <a href="../components/switch.html" class="sidebar-link">开关</a>
+                    <a href="../components/switch.html" class="sidebar-link">开关(vSwitch)</a>
                 </li>
             
                 <li>
-                    <a href="../components/checkbox.html" class="sidebar-link">复选框</a>
+                    <a href="../components/checkbox.html" class="sidebar-link">复选框(vButtonGroup)</a>
                 </li>
             
                 <li>
-                    <a href="../components/radio.html" class="sidebar-link">单选框</a>
+                    <a href="../components/radio.html" class="sidebar-link">单选框(vRadio)</a>
                 </li>
             
                 <li>
-                    <a href="../components/select.html" class="sidebar-link">选择框</a>
+                    <a href="../components/select.html" class="sidebar-link">选择框(vSelect)</a>
                 </li>
             
                 <li>
-                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框</a>
+                    <a href="../components/multi-select.html" class="sidebar-link">下拉多选框(vMultiSelect)</a>
                 </li>
             
                 <li>
-                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表</a>
+                    <a href="../components/dropdown.html" class="sidebar-link">下拉列表(vDropdown)</a>
                 </li>
             
                 <li>
-                    <a href="../components/label-dropdown.html" class="sidebar-link">标签类型的下拉列表</a>
+                    <a href="../components/tips.html" class="sidebar-link">tips弹窗(vTips)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tips.html" class="sidebar-link">tips弹窗</a>
+                    <a href="../components/messagebox.html" class="sidebar-link">messageBox弹窗(vMessageBox)</a>
                 </li>
             
                 <li>
-                    <a href="../components/messagebox.html" class="sidebar-link">messageBox类弹窗</a>
+                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗(vAlert)</a>
                 </li>
             
                 <li>
-                    <a href="../components/alert.html" class="sidebar-link">警告类弹窗</a>
+                    <a href="../components/dialog.html" class="sidebar-link">dialog类弹窗(vDialog)</a>
                 </li>
             
                 <li>
-                    <a href="../components/dialog.html" class="sidebar-link">dialog类模态弹窗</a>
+                    <a href="../components/tabs.html" class="sidebar-link current">标签页(vTabs)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tabs.html" class="sidebar-link current">标签页</a>
+                    <a href="../components/slider.html" class="sidebar-link">滑动条(vSlider)</a>
                 </li>
             
                 <li>
-                    <a href="../components/slider.html" class="sidebar-link">滑动条</a>
+                    <a href="../components/table.html" class="sidebar-link">表格(vTable)</a>
                 </li>
             
                 <li>
-                    <a href="../components/table.html" class="sidebar-link">表格</a>
+                    <a href="../components/pagination.html" class="sidebar-link">分页(vPagination)</a>
                 </li>
             
                 <li>
-                    <a href="../components/pagination.html" class="sidebar-link">分页</a>
+                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域(vInput & vTextarea)</a>
                 </li>
             
                 <li>
-                    <a href="../components/edit-table.html" class="sidebar-link">可插入的表格组件</a>
+                    <a href="../components/step-input.html" class="sidebar-link">步进输入框(vStepInput)</a>
                 </li>
             
                 <li>
-                    <a href="../components/input-textarea.html" class="sidebar-link">文本框和文本域</a>
+                    <a href="../components/badge.html" class="sidebar-link">徽标数(vBadge)</a>
                 </li>
             
                 <li>
-                    <a href="../components/step-input.html" class="sidebar-link">步进输入框</a>
+                    <a href="../components/collapse.html" class="sidebar-link">折叠面板(vCollapse)</a>
                 </li>
             
                 <li>
-                    <a href="../components/badge.html" class="sidebar-link">徽标数</a>
+                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组(vCollapseGroup)</a>
                 </li>
             
                 <li>
-                    <a href="../components/collapse.html" class="sidebar-link">折叠面板</a>
+                    <a href="../components/progress.html" class="sidebar-link">进度条(vProgress)</a>
                 </li>
             
                 <li>
-                    <a href="../components/collapse-group.html" class="sidebar-link">折叠面板组</a>
+                    <a href="../components/loading.html" class="sidebar-link">加载(vLoading)</a>
                 </li>
             
                 <li>
-                    <a href="../components/progress.html" class="sidebar-link">进度条</a>
+                    <a href="../components/steps.html" class="sidebar-link">步骤条(vSteps)</a>
                 </li>
             
                 <li>
-                    <a href="../components/loading.html" class="sidebar-link">加载</a>
+                    <a href="../components/tag-list.html" class="sidebar-link">标签列表(vTagList)</a>
                 </li>
             
                 <li>
-                    <a href="../components/steps.html" class="sidebar-link">步骤条</a>
+                    <a href="../components/time-line.html" class="sidebar-link">时间轴(vTimeLine)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tag-list.html" class="sidebar-link">标签列表</a>
+                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示(vToolTip)</a>
                 </li>
             
                 <li>
-                    <a href="../components/time-line.html" class="sidebar-link">时间轴</a>
+                    <a href="../components/transfer.html" class="sidebar-link">穿梭框(vTransfer)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tool-tip.html" class="sidebar-link">文字提示</a>
+                    <a href="../components/tree.html" class="sidebar-link">树状组件(vTree)</a>
                 </li>
             
                 <li>
-                    <a href="../components/transfer.html" class="sidebar-link">穿梭框</a>
+                    <a href="../components/from.html" class="sidebar-link">表单(vFrom)</a>
                 </li>
             
                 <li>
-                    <a href="../components/tree.html" class="sidebar-link">树状组件</a>
+                    <a href="../components/search.html" class="sidebar-link">搜索框(vSearch)</a>
                 </li>
             
                 <li>
-                    <a href="../components/from.html" class="sidebar-link">表单</a>
-                </li>
-            
-                <li>
-                    <a href="../components/search.html" class="sidebar-link">搜索框</a>
-                </li>
-            
-                <li>
-                    <a href="../components/datepicker.html" class="sidebar-link">日期选择</a>
+                    <a href="../components/datepicker.html" class="sidebar-link">日期选择(vDatepicker)</a>
                 </li>
             
         </ul>
@@ -262,43 +279,70 @@
 
 
 <div class="content components with-sidebar" style="list-style: initial;">
-    <h1>标签页</h1>
-    <h3 id="子组件-pane"><a href="#子组件-pane" class="headerlink" title="子组件 pane"></a>子组件 pane</h3><p class="tip">vPane组件只在vTabs组件中使用,再别处使用将只产生一个section标签来包装代码</p>
+    <h1>标签页(vTabs)</h1>
+    <h2 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h2><p>pane</p>
+<p class="tip">vPane组件只在vTabs组件中使用,再别处使用将只产生一个section标签来包装代码</p>
 
-<h3 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h3><p>import <name> from ‘vucc/tabs’;<br>import <name> from ‘vucc/pane’;</name></name></p>
-<h3 id="模板说明"><a href="#模板说明" class="headerlink" title="模板说明"></a>模板说明</h3><p>标签页组件使用了slot分发技特性<a href="http://vuejs.org.cn/guide/components.html#具名-Slot" target="_blank" rel="external">详见</a>,主要分发3块自定义内容<br>分别是:头部的额外操作部分<code>name = operate</code>,头部部分<code>name = header</code>,页签内容部分:<code>name = panes</code></p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>type</code> 标签页样式类型</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code>default</code></p>
-</li>
-<li><p><strong>· 可选值：</strong> <code>primary|outline|error|link</code></p>
-</li>
-</ul>
-<p><code>size</code> 标签页样式类型</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>String</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code>normal</code></p>
-</li>
-<li><p><strong>· 可选值：</strong> <code>large|small</code></p>
-</li>
-</ul>
-<p><code>activeIndex</code> 当前选中的标签页</p>
-<ul>
-<li><p><strong>· 类型：</strong> <code>Number</code></p>
-</li>
-<li><p><strong>· 默认值：</strong> <code>0</code></p>
-</li>
-</ul>
-<h3 id="综合示例"><a href="#综合示例" class="headerlink" title="综合示例"></a>综合示例</h3><p>基本类型:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"operate"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">v-button</span>&gt;</span>额外操作<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"vci vci-apple"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡111111内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡222222内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡33333内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<div><br><v-tabs type=""><div slot="operate"><v-button>额外操作</v-button></div><div slot="header"><div class="a"><i class="vci vci-apple"></i><span>选项卡1</span></div><div>选项卡2</div><div>选项卡3</div></div><v-pane>选项卡111111内容</v-pane><v-pane>选项卡222222内容</v-pane><v-pane>选项卡33333内容</v-pane></v-tabs></div>
+<h2 id="单组件引入"><a href="#单组件引入" class="headerlink" title="单组件引入"></a>单组件引入</h2><p>import <code>&lt;name&gt;</code> from ‘vucc/tabs’;<br>import <code>&lt;name&gt;</code> from ‘vucc/pane’;</p>
+<h2 id="模板说明"><a href="#模板说明" class="headerlink" title="模板说明"></a>模板说明</h2><p>标签页组件使用了slot分发技特性<a href="http://vuejs.org.cn/guide/components.html#具名-Slot" target="_blank" rel="external">详见</a>,主要分发3块自定义内容<br>分别是:头部的额外操作部分<code>name = operate</code>,头部部分<code>name = header</code>,页签内容部分:<code>name = panes</code></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><div class="vcode"><br><h2>默认 tabs(带额外操作和图标头部)</h2><br><v-tabs type="" :on-change="switchChange"><div slot="operate"><v-button>额外操作</v-button></div><div slot="header"><div class="a"><i class="vci vci-apple"></i><span>选项卡1</span></div><div>选项卡2</div><div>选项卡3</div></div><v-pane></v-pane><v-pane></v-pane><v-pane></v-pane></v-tabs><br><br><h2>卡片式</h2><br><v-tabs type="card" :active-index.sync="activeIndex"><div slot="header"><div>选项卡1</div><div>选项卡2</div><div>选项卡3</div></div><v-pane></v-pane><v-pane></v-pane><v-pane></v-pane></v-tabs><br><br><h2>面板式</h2><br><v-tabs type="panel" size="small" :active-index="1"><div slot="header"><div>选项卡1</div><div>选项卡2</div><div>选项卡3</div></div><v-pane></v-pane><v-pane></v-pane><v-pane></v-pane></v-tabs><br></div>
 
-<p>选项卡类型:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">"card"</span> <span class="attr">:active-index</span>=<span class="string">"activeIndex"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡111111内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡222222内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡33333内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<div><br><v-tabs type="card" :active-index="activeIndex"><div slot="header"><div class="a">选项卡1</div><div>选项卡2</div><div>选项卡3</div></div><v-pane>选项卡111111内容</v-pane><v-pane>选项卡222222内容</v-pane><v-pane>选项卡33333内容</v-pane></v-tabs></div>
+<div class="rcode"><br><span class="showcode">代码 V</span><br><div class="hide"><br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">""</span> <span class="attr">:on-change</span>=<span class="string">"switchChange"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"operate"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">v-button</span>&gt;</span>额外操作<span class="tag">&lt;/<span class="name">v-button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"vci vci-apple"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">"card"</span> <span class="attr">:active-index.sync</span>=<span class="string">"activeIndex"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">"panel"</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">:active-index</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span><span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div></pre></td></tr></table></figure><br><br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        activeIndex: <span class="number">2</span></div><div class="line">    &#125;</div><div class="line">&#125;,</div><div class="line">methods: &#123;</div><div class="line">    switchChange(value) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Tab switch result is :'</span>, value)</div><div class="line">    &#125;,</div><div class="line">    buttonClick() &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'u has been click'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure><br><br></div><br></div>
 
-<p>小尺寸选项卡:<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">v-tabs</span> <span class="attr">type</span>=<span class="string">"panel"</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">:active-index</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span>选项卡1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>选项卡3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡111111内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡222222内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">v-pane</span>&gt;</span>选项卡33333内容<span class="tag">&lt;/<span class="name">v-pane</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">v-tabs</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>标签页样式类型</td>
+<td>String</td>
+<td>line/card/panel</td>
+<td>line</td>
+</tr>
+<tr>
+<td>size</td>
+<td>标签的大小</td>
+<td>String</td>
+<td>large/small/normal</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>activeIndex</td>
+<td>当前选中的标签页</td>
+<td>Number</td>
+<td>-</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+<th>类型</th>
+<th>参数</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onChange</td>
+<td>切换标签页时的回调</td>
+<td>Function</td>
+<td>curIndex,当前的标签索引</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 
 
     
@@ -306,27 +350,32 @@
     
       <div class="guide-links">
         
-          <span>← <a href="../components/dialog.html">dialog类模态弹窗</a></span>
+          <span>← <a href="../components/dialog.html">dialog类弹窗(vDialog)</a></span>
         
         
-          <span style="float:right"><a href="../components/slider.html">滑动条</a> →</span>
+          <span style="float:right"><a href="../components/slider.html">滑动条(vSlider)</a> →</span>
         
       </div>
     
 </div>
 
-                
-            </div>
-            <script src="../js/docsearch.js"></script>
-            <script src="../js/smooth-scroll.min.js"></script>
-            <script src="../js/common.js"></script>
-            <script src="../js/fastclick.min.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    FastClick.attach(document.body);
-                }, false);
-            </script>
+                    
+                </div>
+                <script src="../js/docsearch.js"></script>
+                <script src="../js/smooth-scroll.min.js"></script>
+                <script src="../js/common.js"></script>
+                <script src="../js/fastclick.min.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        FastClick.attach(document.body);
+                    }, false);
+                </script>
 
-        
+            
+            
+                <script src="../js/demo.js"></script>
+                <script src="../js/vue-demo.js"></script>
+            
+        </section>
     </body>
 </html>
