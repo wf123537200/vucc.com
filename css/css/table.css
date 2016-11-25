@@ -1,0 +1,25 @@
+table:not(.vc-datepicker-table){
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border: 1px solid #f0f0f0;
+    font-size: 12px;
+    color: #1b1e25;
+    line-height: 2;
+}
+
+table:not(.vc-datepicker-table) th {
+    background: #eef0f2;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    position: relative;
+    font-weight: normal;
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+
+table:not(.vc-datepicker-table) td {
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
